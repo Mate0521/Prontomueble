@@ -6,19 +6,17 @@ package Modelo;
  */
 public class Nuevo extends Mueble{
     private int garantia;
-    private String id_mueble;
 
-    public Nuevo(int garantia, String id_mueble, String nombre, String dimenciones, String color, String material) {
-        super(nombre, dimenciones, color, material);
+    public Nuevo(int garantia, String nombre, String dimenciones, String color, String material, String id) {
+        super(nombre, dimenciones, color, material, id);
         this.garantia = garantia;
-        this.id_mueble = id_mueble;
     }
+    
     public Nuevo() {
         super();
         this.garantia = 0;
-        this.id_mueble = "";
     }
-
+    
     public int getGarantia() {
         return garantia;
     }
@@ -27,17 +25,9 @@ public class Nuevo extends Mueble{
         this.garantia = garantia;
     }
 
-    public String getId_mueble() {
-        return id_mueble;
-    }
-
-    public void setId_mueble(String id_mueble) {
-        this.id_mueble = id_mueble;
-    }
-
     @Override
     public String toString() {
-        return super.toString()+"\nGarantia=" + garantia + "\nId_mueble=" + id_mueble ;
+        return super.toString()+"\nGarantia=" + garantia ;
     }
     
 

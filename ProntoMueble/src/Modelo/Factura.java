@@ -4,10 +4,17 @@
  */
 package Modelo;
 
+import java.util.*;
+
 /**
  *
- * @author ASUS
+ * @author Mateo
  */
 public class Factura {
+    private double valor;
+    private int cantidad;
+    private String metodo_pago;
+    private Vector<Mueble> mueble;
+    
     
 }
