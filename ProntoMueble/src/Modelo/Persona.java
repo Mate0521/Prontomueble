@@ -5,19 +5,29 @@ package Modelo;
  * @author Mateo
  */
 public class Persona {
-    private String nombre, direccion, telefono, email;
+    private String id, nombre, direccion, telefono, email;
 
-    public Persona(String nombre, String direccion, String telefono, String email) {
+    public Persona(String id, String nombre, String direccion, String telefono, String email) {
+        this.id=id;
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
         this.email = email;
     }
     public Persona() {
+        this.id="";
         this.nombre = "";
         this.direccion = "";
         this.telefono = "";
         this.email = "";
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getNombre() {

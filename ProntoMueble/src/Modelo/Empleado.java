@@ -12,8 +12,8 @@ public class Empleado extends Persona{
     private String rol, contrato;
     private LocalDate fecha_nac;
 
-    public Empleado(double Sueldo, String rol, String contrato, LocalDate fecha_nac, String nombre, String direccion, String telefono, String email) {
-        super(nombre, direccion, telefono, email);
+    public Empleado(double Sueldo, String rol, String contrato, LocalDate fecha_nac, String id, String nombre, String direccion, String telefono, String email) {
+        super(id, nombre, direccion, telefono, email);
         this.sueldo = Sueldo;
         this.rol = rol;
         this.contrato = contrato;

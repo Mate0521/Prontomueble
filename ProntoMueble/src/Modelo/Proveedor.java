@@ -7,8 +7,8 @@ package Modelo;
 public class Proveedor extends Persona{
     private String empresa;
 
-    public Proveedor(String empresa, String nombre, String direccion, String telefono, String email) {
-        super(nombre, direccion, telefono, email);
+    public Proveedor(String empresa, String id, String nombre, String direccion, String telefono, String email) {
+        super(id,nombre, direccion, telefono, email);
         this.empresa = empresa;
     }
 
