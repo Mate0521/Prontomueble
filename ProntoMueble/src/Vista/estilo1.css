@@ -42,7 +42,7 @@
     -fx-background-radius: 60px 0 60px 0; /* Bordes redondeados */
     -fx-border-radius:  60px 0 60px 0;     /* Redondear borde */
     -fx-border-width: 2;       /* Ancho del borde */
-    -fx-border-color: #0078d4; /* Color del borde */
+    -fx-border-color: #ffffff; /* Color del borde */
 }
 .tab-pane .tab-header-area {
     -fx-background-color: transparent; /* Hace el área superior transparente */
