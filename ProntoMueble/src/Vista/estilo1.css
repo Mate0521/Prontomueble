@@ -17,12 +17,12 @@
 }
 .L4{
     -fx-font-family: 'Segoe UI',sans-serif;
-    -fx-font-size: 9px;
+    -fx-font-size: 13px;
     -fx-color: #000000;
-    font-weight: bold
+    -fx-font-weight: bold
 }
 .P1{
-    -fx-background-color: #d7dded;
+    -fx-background-color: 78b9ff;
 }
 .P2{
     -fx-background-color: #ffffff;
@@ -37,7 +37,79 @@
      -fx-transition: all 0.3s ease-in-out;
      -fx-box-shadow: 0 5px 8px rgba(0, 0, 0, 0.5); 
 }
-.I1{
-    -fx-height: auto;
-    -fx-border-radius: 80px 0 0 80px ;
+.image-view {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 2, 2); /* Sombra */
+    -fx-background-radius: 60px 0 60px 0; /* Bordes redondeados */
+    -fx-border-radius:  60px 0 60px 0;     /* Redondear borde */
+    -fx-border-width: 2;       /* Ancho del borde */
+    -fx-border-color: #0078d4; /* Color del borde */
+}
+.tab-pane .tab-header-area {
+    -fx-background-color: transparent; /* Hace el área superior transparente */
+    -fx-padding: 0;                    /* Elimina el espacio */
+    -fx-pref-height: 0;                /* Establece la altura de las pestañas en 0 */
+    -fx-max-height: 0;                 
+    -fx-min-height: 0;               
+}
+.combo-box {
+    -fx-background-color: transparent; 
+    -fx-border-color: #0078d4;     
+}   
+.combo-box .arrow-button {
+    -fx-background-color: transparent; /* Flecha sin fondo */
+    -fx-padding: 100%;                     /* Sin relleno */
+    -fx-shape: "M 0 0 L 5 5 L 10 0 Z"; /* Estilo personalizado para la flecha (forma triangular) */
+}
+.combo-box .text {
+    -fx-font-family: 'Ebrima',sans-serif;
+    -fx-font-size: 10px;
+    -fx-text-fill: #000000; /* Color del texto */
+}
+.combo-box .list-cell {
+    -fx-background-color: #f0f0f0; /* Color de fondo de las opciones desplegadas */
+}
+.combo-box .list-cell:hover {
+    -fx-background-color: #dcdcdc; /* Color de fondo cuando pasas el mouse por encima */
+}
+.combo-box:focused {
+    -fx-background-color: transparent; /* Fondo transparente cuando el ComboBox está enfocado */
+    -fx-border-color: #0078d4;     /* Elimina el borde cuando está enfocado */
+    border-width: 4;
+}
+.text-field {
+    -fx-background-color: transparent; /* Fondo transparente */
+    -fx-border-color: transparent;    /* Sin borde predeterminado */
+    -fx-border-width: 0 0 2 0;        /* Borde solo en la parte inferior */
+    -fx-border-color: #0078d4;       /* Color de la línea (estilo Microsoft) */
+    -fx-padding: 5 0 5 0;            /* Espaciado interno para el texto */
+}
+.text-field:focused {
+    -fx-border-color: #005a9e;       /* Cambia el color de la línea cuando está enfocado */
+    -fx-border-width: 0 0 3 0;       /* Aumenta el grosor de la línea para destacar */
+}
+.text-field .text {
+    -fx-fill: #000000;               /* Color del texto */
+    -fx-background-color: transparent;
+    -fx-font-family: 'Ebrima',sans-serif;
+    -fx-font-size: 10px;
+}
+.button {
+    -fx-background-color: #0078d4;  /* Color azul estilo Microsoft */
+    -fx-text-fill: white;           /* Texto blanco */
+    -fx-background-radius: 0;       /* Esquinas rectas */
+    -fx-border-width: 0;            /* Sin bordes visibles */
+    -fx-padding: 10 20;             /* Espaciado interno (alto y ancho del botón) */
+    -fx-font-size: 13px;            /* Tamaño del texto */
+    -fx-cursor: hand;               /* Cambia el cursor al pasar sobre el botón */
+}
+.button:hover {
+    -fx-background-color: #005a9e;  /* Azul más oscuro al pasar el mouse */
+}
+.button:pressed {
+    -fx-background-color: #003c78;  /* Azul más oscuro al hacer clic */
+}
+.button .text {
+    -fx-font-family: 'Ebrima',sans-serif;
+    -fx-font-weight: bold;          /* Texto en negrita */
+    -fx-text-fill: white;           /* Color del texto blanco */
 }
