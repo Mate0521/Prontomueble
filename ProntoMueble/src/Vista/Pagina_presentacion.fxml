@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" stylesheets="@estilo2.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox prefHeight="600.0" prefWidth="330.0" styleClass="P2" stylesheets="@estilo2.css">
+         <children>
+            <Pane prefHeight="120.0" prefWidth="221.0" styleClass="P2" stylesheets="@estilo2.css">
+               <children>
+                  <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="118.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../folder/logoProntomueble.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <ToolBar id="toolInicio" prefHeight="40.0" prefWidth="200.0" styleClass="toolbar">
+              <items>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../folder/home.jpg" />
+                     </image>
+                  </ImageView>
+                <Button id="BtnInicio" mnemonicParsing="false" text="Inicio" />
+              </items>
+            </ToolBar>
+            <Pane prefHeight="22.0" prefWidth="317.0" styleClass="P2" />
+            <ToolBar id="toolVentas" prefHeight="40.0" prefWidth="200.0" styleClass="toolbar">
+              <items>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../folder/dollar.jpg" />
+                     </image>
+                  </ImageView>
+                <Button id="BtnVentas" mnemonicParsing="false" text="Ventas" />
+              </items>
+            </ToolBar>
+            <ToolBar id="toolInventario" prefHeight="40.0" prefWidth="200.0" styleClass="toolbar">
+              <items>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../folder/inventory.jpg" />
+                     </image>
+                  </ImageView>
+                <Button id="BtnInvetario" mnemonicParsing="false" text="Inventario" />
+              </items>
+            </ToolBar>
+            <ToolBar id="toolRH" prefHeight="40.0" prefWidth="200.0" styleClass="toolbar">
+              <items>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../folder/R_H.jpg" />
+                     </image>
+                  </ImageView>
+                <Button id="BtnRH" mnemonicParsing="false" text="Recursos Humanos" />
+              </items>
+            </ToolBar>
+            <ToolBar id="toolDevoluciones" prefHeight="40.0" prefWidth="200.0" styleClass="toolbar">
+              <items>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../folder/returns.jpg" />
+                     </image>
+                  </ImageView>
+                <Button id="BtnDevoluciones" mnemonicParsing="false" text="Devoluciones" />
+              </items>
+            </ToolBar>
+            <ToolBar id="toolEstadisticas" prefHeight="40.0" prefWidth="200.0" styleClass="toolbar">
+              <items>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../folder/stats.jpg" />
+                     </image>
+                  </ImageView>
+                <Button id="BtnEstadisticas" mnemonicParsing="false" text="Estadisticas" />
+              </items>
+            </ToolBar>
+            <ToolBar id="toolAdmin " prefHeight="40.0" prefWidth="200.0" styleClass="toolbar">
+              <items>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../folder/CEO.jpg" />
+                     </image>
+                  </ImageView>
+                <Button id="BtnAdmin" mnemonicParsing="false" text="Admin" />
+              </items>
+            </ToolBar>
+            <Pane prefHeight="107.0" prefWidth="317.0" styleClass="P2" />
+            <ToolBar id="toolComentarios" prefHeight="40.0" prefWidth="200.0" styleClass="toolbar">
+               <items>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../folder/comments.jpg" />
+                     </image>
+                  </ImageView>
+                  <Button id="BtnComentarios" mnemonicParsing="false" text="Cometarios" />
+               </items>
+            </ToolBar>
+         </children>
+      </VBox>
+      <Pane prefHeight="600.0" prefWidth="696.0" styleClass="P1" stylesheets="@estilo2.css" />
+   </children>
+</HBox>
