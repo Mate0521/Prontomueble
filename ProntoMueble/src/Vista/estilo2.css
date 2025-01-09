@@ -1,30 +1,19 @@
-.P1{
-    -fx-background-color: #c3c3c3;
-}
 .P2{
     -fx-background-color: #ffffff;
 }
 /* Estilo para el botón */
 .button {
-    -fx-font-family: 'Ebrima';
-    -fx-font-size: 13.2px;
-    -fx-text-fill: #000000; /* Color del texto */
-    -fx-background-color: transparent; /* Sin fondo */
-    -fx-border-width: 0; /* Sin bordes */
-    -fx-cursor: hand; /* Cursor tipo mano */
-}
-.button {
     -fx-background-color: transparent; 
     -fx-text-fill: #000000;           /* Texto blanco */
     -fx-border-width: 0;            /* Sin bordes visibles */
-    -fx-font-size: 13.2px;            /* Tamaño del texto */
+    -fx-font-size: 15.2px;            /* Tamaño del texto */
     -fx-cursor: hand;               /* Cambia el cursor al pasar sobre el botón */
 }
 .button:hover {
     -fx-background-color: #e5e5e5;  
 }
 .button:pressed {
-    -fx-text-fill: #656565;           /* Texto blanco */
+    -fx-text-fill: #656565;           
 }
 .button .text {
     -fx-font-family: 'Ebrima',sans-serif;
@@ -40,5 +29,6 @@
 .toolbar:pressed .button {
     -fx-text-fill: #656565; /* Color de texto al hacer clic */
 }
+
 
 
