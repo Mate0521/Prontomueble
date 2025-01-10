@@ -1,0 +1,15 @@
+.P1{/*panel prin cipal*/
+    -fx-background-color: #878fff;
+}
+/*diferenciar paneles*/
+.P2{
+    -fx-background-color: #009fad;
+    
+}
+.P3{
+    -fx-background-color: #ffffff;
+    
+}
+.P4{
+    background-color: #656565;
+}

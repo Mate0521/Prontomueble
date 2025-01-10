@@ -1,7 +1,7 @@
-.tab-pane .tab-header-area {
-    -fx-background-color: transparent; /* Hace el área superior transparente */
-    -fx-padding: 0;                    /* Elimina el espacio */
-    -fx-pref-height: 0;                /* Establece la altura de las pestañas en 0 */
+/*.tab-pane .tab-header-area {
+    -fx-background-color: transparent; /* Hace el área superior transparente 
+    -fx-padding: 0;                    
+    -fx-pref-height: 0;                
     -fx-max-height: 0;                 
     -fx-min-height: 0;               
-}
+}*/
