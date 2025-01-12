@@ -147,10 +147,3 @@
     -fx-alignment: center-left; /* Alinea la flecha a la derecha */
 }
 
-/* Área desplegable 
-.titled-pane > .content {
-    -fx-background-color: #f0f0f0; /* Fondo del contenido */
-   /* -fx-border-color: #dcdcdc; /* Borde del contenido */
-    /*-fx-border-width: 1px; /* Grosor del borde */
-/*}*/
-

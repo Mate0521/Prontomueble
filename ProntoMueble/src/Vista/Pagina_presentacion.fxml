@@ -341,12 +341,128 @@
                 </Tab>
                   <Tab id="tabInventario" text="Inventario">
                     <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox layoutX="-2.0" layoutY="-1.0" prefHeight="574.0" prefWidth="684.0">
+                                 <children>
+                                    <Pane prefHeight="40.0" prefWidth="200.0" />
+                                    <ToolBar prefHeight="40.0" prefWidth="200.0">
+                                      <items>
+                                        <Button mnemonicParsing="false" text="Agregar" />
+                                      </items>
+                                    </ToolBar>
+                                    <Pane prefHeight="40.0" prefWidth="200.0" />
+                                    <ToolBar prefHeight="40.0" prefWidth="200.0">
+                                      <items>
+                                        <Button mnemonicParsing="false" text="Eliminar" />
+                                      </items>
+                                    </ToolBar>
+                                    <Pane prefHeight="116.0" prefWidth="684.0">
+                                       <children>
+                                          <Label layoutX="135.0" layoutY="50.0" text="Modificar" />
+                                          <ToolBar layoutX="359.0" layoutY="38.0" prefHeight="41.0" prefWidth="263.0">
+                                             <items>
+                                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
+                                                   <image>
+                                                      <Image url="@../folder/Search.jpg" />
+                                                   </image>
+                                                </ImageView>
+                                                <TextField prefHeight="25.0" prefWidth="210.0" promptText="ID" />
+                                             </items>
+                                          </ToolBar>
+                                       </children>
+                                    </Pane>
+                                    <Pane prefHeight="297.0" prefWidth="684.0">
+                                       <children>
+                                          <Pane layoutX="98.0" layoutY="26.0" prefHeight="246.0" prefWidth="489.0">
+                                             <children>
+                                                <Label layoutX="14.0" layoutY="40.0" text="Dimenciones:            x                 x                 .(CMs)" />
+                                                <TextField layoutX="87.0" layoutY="36.0" prefHeight="25.0" prefWidth="35.0" promptText="Alto" />
+                                                <TextField layoutX="134.0" layoutY="36.0" prefHeight="25.0" prefWidth="47.0" promptText="Largo" />
+                                                <TextField layoutX="199.0" layoutY="36.0" prefHeight="25.0" prefWidth="47.0" promptText="Ancho" />
+                                                <TextField layoutX="64.0" layoutY="78.0" />
+                                                <Label layoutX="14.0" layoutY="82.0" text="Nombre: " />
+                                                <ComboBox layoutX="14.0" layoutY="120.0" prefHeight="25.0" prefWidth="201.0" promptText="Material" />
+                                                <ComboBox layoutX="14.0" layoutY="162.0" prefHeight="25.0" prefWidth="201.0" promptText="Color " />
+                                                <ComboBox layoutX="14.0" layoutY="203.0" prefHeight="25.0" prefWidth="201.0" promptText="Tipo" />
+                                                <TextField layoutX="300.0" layoutY="78.0" prefHeight="25.0" prefWidth="163.0" />
+                                                <Label layoutX="264.0" layoutY="82.0" text="Precio: " />
+                                                <TextField layoutX="314.0" layoutY="120.0" prefHeight="25.0" prefWidth="149.0" />
+                                                <Label layoutX="264.0" layoutY="124.0" text="Cantidad: " />
+                                                <ToolBar layoutX="258.0" layoutY="155.0" prefHeight="40.0" prefWidth="212.0">
+                                                   <items>
+                                                      <Label prefHeight="17.0" prefWidth="57.0" text="Garantia: " />
+                                                      <TextField prefHeight="25.0" prefWidth="137.0" />
+                                                   </items>
+                                                </ToolBar>
+                                                <Button layoutX="263.0" layoutY="203.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="200.0" text="Imagen" />
+                                             </children>
+                                          </Pane>
+                                          <Button layoutX="616.0" layoutY="136.0" mnemonicParsing="false" text="OK" />
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </VBox>
+                           </children></AnchorPane>
                     </content>
                   </Tab>
                   <Tab id="tabRH" text="RH">
                     <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox prefHeight="574.0" prefWidth="684.0">
+                                 <children>
+                                    <Pane prefHeight="40.0" prefWidth="200.0" />
+                                    <ToolBar prefHeight="40.0" prefWidth="200.0">
+                                       <items>
+                                          <Button mnemonicParsing="false" text="Contratar" />
+                                       </items>
+                                    </ToolBar>
+                                    <Pane prefHeight="40.0" prefWidth="200.0" />
+                                    <ToolBar prefHeight="40.0" prefWidth="200.0">
+                                       <items>
+                                          <Button mnemonicParsing="false" text="Despedir" />
+                                       </items>
+                                    </ToolBar>
+                                    <Pane prefHeight="116.0" prefWidth="684.0">
+                                       <children>
+                                          <Label layoutX="135.0" layoutY="50.0" text="Modificar" />
+                                          <ToolBar layoutX="359.0" layoutY="38.0" prefHeight="41.0" prefWidth="263.0">
+                                             <items>
+                                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
+                                                   <image>
+                                                      <Image url="@../folder/Search.jpg" />
+                                                   </image>
+                                                </ImageView>
+                                                <TextField prefHeight="25.0" prefWidth="210.0" promptText="ID" />
+                                             </items>
+                                          </ToolBar>
+                                       </children>
+                                    </Pane>
+                                    <Pane prefHeight="297.0" prefWidth="684.0">
+                                       <children>
+                                          <Pane layoutX="98.0" layoutY="26.0" prefHeight="246.0" prefWidth="489.0">
+                                             <children>
+                                                <TextField disable="true" layoutX="14.0" layoutY="30.0" prefHeight="25.0" prefWidth="197.0" promptText="ID:BD" />
+                                                <TextField layoutX="64.0" layoutY="78.0" />
+                                                <Label layoutX="14.0" layoutY="82.0" text="Nombre: " />
+                                                <ComboBox layoutX="14.0" layoutY="162.0" prefHeight="25.0" prefWidth="201.0" promptText="Rol" />
+                                                <ComboBox layoutX="14.0" layoutY="203.0" prefHeight="25.0" prefWidth="201.0" promptText="Contrato" />
+                                                <TextField layoutX="300.0" layoutY="78.0" prefHeight="25.0" prefWidth="163.0" />
+                                                <Label layoutX="264.0" layoutY="82.0" text="Email: " />
+                                                <TextField layoutX="304.0" layoutY="120.0" prefHeight="25.0" prefWidth="159.0" />
+                                                <Label layoutX="264.0" layoutY="124.0" text="Sueldo: " />
+                                                <Button layoutX="264.0" layoutY="162.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="200.0" text="Imagen" />
+                                                <TextField layoutX="65.0" layoutY="120.0" />
+                                                <Label layoutX="15.0" layoutY="124.0" text="Telefono: " />
+                                             </children>
+                                          </Pane>
+                                          <Button layoutX="623.0" layoutY="136.0" mnemonicParsing="false" text="OK" />
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </VBox>
+                           </children></AnchorPane>
                     </content>
                   </Tab>
                   <Tab id="tabEstadisticas" text="Estadisticas">
