@@ -19,6 +19,11 @@ CREATE TABLE Material (
     id_material SERIAL PRIMARY KEY,
     nombre VARCHAR(50) NOT NULL
 );
+-- Tabla: Metodo_Pago
+CREATE TABLE Metodo_Pago (
+    id_metodoPago SERIAL PRIMARY KEY,
+    nombre VARCHAR(50) NOT NULL UNIQUE
+);
 
 -- Tabla: Mueble
 CREATE TABLE Mueble (
@@ -31,7 +36,6 @@ CREATE TABLE Mueble (
     imagen TEXT,
     precio NUMERIC(12, 2) NOT NULL,
     garantia VARCHAR(100),
-    estado VARCHAR(50),
     fecha_terminacion DATE,
     id_material INTEGER NOT NULL REFERENCES Material(id_material),
     id_color INTEGER NOT NULL REFERENCES Color(id_color),
@@ -45,7 +49,6 @@ CREATE TABLE Proveedores (
     direccion VARCHAR(200),
     responsable VARCHAR(100),
     telefono VARCHAR(15),
-    estado VARCHAR(50),
     fecha_inicio DATE NOT NULL,
     fecha_terminacion DATE,
     id_tipoMueble INTEGER REFERENCES Tipo_mueble(id_tipoMueble)
@@ -58,6 +61,7 @@ CREATE TABLE Compra (
     cantidad INTEGER NOT NULL,
     fecha_E DATE NOT NULL,
     costos NUMERIC(12, 2),
+    id_metodoPago INTEGER NOT NULL REFERENCES Metodo_Pago(id_metodoPago),
     PRIMARY KEY (id_proveedores, id_mueble)
 );
 
@@ -99,6 +103,7 @@ CREATE TABLE Nomina (
 CREATE TABLE Registro_nomina (
     id_registroNomina INTEGER NOT NULL REFERENCES Nomina(id_registroNomina),
     id_empleado INTEGER NOT NULL REFERENCES Empleado(id_empleado),
+    id_metodoPago INTEGER NOT NULL REFERENCES Metodo_Pago(id_metodoPago),
     PRIMARY KEY (id_registroNomina, id_empleado)
 );
 
@@ -109,7 +114,6 @@ CREATE TABLE Cliente (
     direccion VARCHAR(200),
     telefono VARCHAR(15),
     email VARCHAR(100),
-    estado VARCHAR(50),
     fecha_inicio DATE NOT NULL,
     fecha_terminacion DATE
 );
@@ -119,7 +123,7 @@ CREATE TABLE Venta (
     id_venta SERIAL PRIMARY KEY,
     fecha DATE NOT NULL,
     total NUMERIC(12, 2) NOT NULL,
-    id_metodoPago INTEGER NOT NULL,
+    id_metodoPago INTEGER NOT NULL REFERENCES Metodo_Pago(id_metodoPago),
     id_empleado INTEGER NOT NULL REFERENCES Empleado(id_empleado),
     id_cliente INTEGER NOT NULL REFERENCES Cliente(id_cliente)
 );
@@ -164,3 +168,4 @@ CREATE TABLE Mueble_devuelto (
     id_color INTEGER NOT NULL REFERENCES Color(id_color),
     id_tipoMueble INTEGER NOT NULL REFERENCES Tipo_mueble(id_tipoMueble)
 );
+
