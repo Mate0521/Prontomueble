@@ -1,21 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.StackedBarChart?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
@@ -145,45 +160,209 @@
                                        <children>
                                           <VBox prefHeight="492.0" prefWidth="275.0" styleClass="P3">
                                              <children>
-                                                <ComboBox prefHeight="25.0" prefWidth="277.0" promptText="Material" />
-                                                <ComboBox prefHeight="25.0" prefWidth="277.0" promptText="Color" />
-                                                <ComboBox prefHeight="25.0" prefWidth="297.0" promptText="Tipo" />
-                                                <TitledPane animated="false" prefHeight="142.0" prefWidth="136.0" text="Filtrar por dimenciones ">
+                                                <ComboBox prefHeight="25.0" prefWidth="277.0" promptText="Material">
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor></ComboBox>
+                                                <ComboBox prefHeight="25.0" prefWidth="277.0" promptText="Color">
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor></ComboBox>
+                                                <ComboBox prefHeight="25.0" prefWidth="297.0" promptText="Type">
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor></ComboBox>
+                                                <TitledPane contentDisplay="TOP" prefHeight="142.0" prefWidth="136.0" text="Filter by dimensions">
                                                    <content>
                                                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="87.0" prefWidth="160.0">
                                                          <children>
-                                                            <Label layoutX="14.0" layoutY="25.0" text="Alto" />
-                                                            <TextField id="TxtAlto" layoutX="54.0" layoutY="20.0" prefHeight="29.0" prefWidth="56.0" promptText="Alto" styleClass="textField" />
-                                                            <TextField id="TxtLargo" layoutX="54.0" layoutY="51.0" prefHeight="29.0" prefWidth="65.0" promptText="Largo" styleClass="textField" />
-                                                            <TextField id="TxtAncho" layoutX="54.0" layoutY="81.0" prefHeight="29.0" prefWidth="65.0" promptText="Ancho" styleClass="textField" />
-                                                            <Label layoutX="11.0" layoutY="55.0" text="Largo" />
-                                                            <Label layoutX="9.0" layoutY="85.0" text="Ancho" />
+                                                            <Label layoutX="14.0" layoutY="25.0" text="High" />
+                                                            <TextField id="TxtAlto" layoutX="54.0" layoutY="20.0" prefHeight="29.0" prefWidth="64.0" promptText="High" styleClass="textField" />
+                                                            <TextField id="TxtLargo" layoutX="54.0" layoutY="51.0" prefHeight="29.0" prefWidth="65.0" promptText="Long" styleClass="textField" />
+                                                            <TextField id="TxtAncho" layoutX="54.0" layoutY="81.0" prefHeight="29.0" prefWidth="65.0" promptText="Wide" styleClass="textField" />
+                                                            <Label layoutX="11.0" layoutY="55.0" text="Long" />
+                                                            <Label layoutX="9.0" layoutY="85.0" text="Wide" />
                                                             <Label layoutX="29.0" layoutY="5.0" text="(cms)" />
                                                          </children>
                                                       </AnchorPane>
                                                    </content>
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
                                                 </TitledPane>
                                                 <Pagination maxPageIndicatorCount="3" pageCount="3" prefHeight="231.0" prefWidth="275.0" />
-                                                <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="275.0" text="Carrito de Compras " />
+                                                <Button alignment="CENTER" mnemonicParsing="false" prefHeight="44.0" prefWidth="275.0" text="Shopping Cart" wrapText="true" />
                                              </children>
                                           </VBox>
                                        </children>
                                     </AnchorPane>
                               </content>
                             </Tab>
-                            <Tab>
+                            <Tab id="PL_inventory" text="Inventory">
                               <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="492.0" prefWidth="275.0">
+                                             <children>
+                                                <VBox prefHeight="492.0" prefWidth="275.0">
+                                                   <children>
+                                                      <Pane prefHeight="244.0" prefWidth="275.0">
+                                                         <children>
+                                                            <Label layoutX="74.0" layoutY="219.0" text="Invetory Estatus in Alert" />
+                                                            <Label layoutX="123.0" layoutY="29.0" text="Philtre" />
+                                                            <TextField layoutX="37.0" layoutY="173.0" promptText="Price" />
+                                                            <ComboBox layoutX="37.0" layoutY="136.0" prefWidth="150.0" promptText="Color" />
+                                                            <ComboBox layoutX="37.0" layoutY="99.0" prefWidth="150.0" promptText="Material" />
+                                                            <ComboBox layoutX="37.0" layoutY="62.0" prefWidth="150.0" promptText="Type" />
+                                                            <CheckBox layoutX="14.0" layoutY="66.0" mnemonicParsing="false" />
+                                                            <CheckBox layoutX="14.0" layoutY="103.0" mnemonicParsing="false" />
+                                                            <CheckBox layoutX="14.0" layoutY="140.0" mnemonicParsing="false" />
+                                                            <CheckBox layoutX="14.0" layoutY="177.0" mnemonicParsing="false" />
+                                                         </children>
+                                                      </Pane>
+                                                      <BorderPane prefHeight="253.0" prefWidth="275.0">
+                                                         <center>
+                                                            <TreeTableView prefHeight="200.0" prefWidth="275.0" BorderPane.alignment="CENTER">
+                                                               <columns>
+                                                                  <TreeTableColumn prefWidth="191.33331298828125" text="Stok" />
+                                                                  <TreeTableColumn prefWidth="82.0" text="Quantity" />
+                                                               </columns>
+                                                            </TreeTableView>
+                                                         </center>
+                                                      </BorderPane>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </AnchorPane>
+                                       </children></AnchorPane>
                               </content>
                             </Tab>
-                              <Tab text="Untitled Tab">
+                              <Tab id="PL_rh" text="RH">
                                 <content>
-                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <VBox prefHeight="492.0" prefWidth="275.0">
+                                             <children>
+                                                <Pane prefHeight="195.0" prefWidth="275.0">
+                                                   <children>
+                                                      <LineChart layoutX="12.0" layoutY="17.0" prefHeight="175.0" prefWidth="252.0" title="Number of employees">
+                                                         <xAxis>
+                                                            <CategoryAxis side="BOTTOM" />
+                                                         </xAxis>
+                                                         <yAxis>
+                                                            <NumberAxis side="LEFT" />
+                                                         </yAxis>
+                                                      </LineChart>
+                                                   </children>
+                                                </Pane>
+                                                <Pane prefHeight="144.0" prefWidth="275.0">
+                                                   <children>
+                                                      <Label layoutX="99.0" text="Chek Birthdays" />
+                                                      <DatePicker layoutX="51.0" layoutY="32.0" />
+                                                      <ListView layoutX="51.0" layoutY="72.0" prefHeight="63.0" prefWidth="175.0" />
+                                                   </children>
+                                                </Pane>
+                                                <TableView prefHeight="155.0" prefWidth="279.0">
+                                                   <columns>
+                                                      <TableColumn prefWidth="81.3333740234375" text="ID Employees" />
+                                                      <TableColumn prefWidth="116.66668701171875" text="Name" />
+                                                      <TableColumn prefWidth="77.33331298828125" text="Roster" />
+                                                   </columns>
+                                                </TableView>
+                                             </children>
+                                          </VBox>
+                                       </children></AnchorPane>
                                 </content>
                               </Tab>
-                              <Tab text="Untitled Tab">
+                              <Tab id="PL_refund" text="Refund">
                                 <content>
-                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <VBox prefHeight="492.0" prefWidth="275.0">
+                                             <children>
+                                                <Pane prefHeight="41.0" prefWidth="275.0">
+                                                   <children>
+                                                      <Label layoutX="101.0" layoutY="12.0" text="Refund Status" />
+                                                   </children>
+                                                </Pane>
+                                                <TableView prefHeight="200.0" prefWidth="200.0">
+                                                   <columns>
+                                                      <TableColumn prefWidth="99.99993896484375" text="ID Refund" />
+                                                      <TableColumn prefWidth="99.3333740234375" text="ID Furniture" />
+                                                      <TableColumn prefWidth="72.66668701171875" text="Status" />
+                                                   </columns>
+                                                </TableView>
+                                                <Pane prefHeight="250.0" prefWidth="275.0">
+                                                   <children>
+                                                      <StackedBarChart layoutX="22.0" layoutY="18.0" prefHeight="200.0" prefWidth="232.0" title="Refunds per month">
+                                                         <xAxis>
+                                                            <CategoryAxis side="BOTTOM" />
+                                                         </xAxis>
+                                                         <yAxis>
+                                                            <NumberAxis side="LEFT" />
+                                                         </yAxis>
+                                                      </StackedBarChart>
+                                                   </children>
+                                                </Pane>
+                                             </children>
+                                          </VBox>
+                                       </children></AnchorPane>
+                                </content>
+                              </Tab>
+                              <Tab text="Statistics">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <VBox prefHeight="492.0" prefWidth="275.0">
+                                             <children>
+                                                <ToolBar prefHeight="40.0" prefWidth="200.0">
+                                                   <items>
+                                                      <RadioButton mnemonicParsing="false" text="Total Sales" />
+                                                   </items>
+                                                </ToolBar>
+                                                <ToolBar prefHeight="40.0" prefWidth="200.0">
+                                                   <items>
+                                                      <RadioButton mnemonicParsing="false" text="Best Selling Products" />
+                                                   </items>
+                                                </ToolBar>
+                                                <ToolBar prefHeight="40.0" prefWidth="200.0">
+                                                   <items>
+                                                      <RadioButton mnemonicParsing="false" text="Income VS Expenses" />
+                                                   </items>
+                                                </ToolBar>
+                                                <ToolBar prefHeight="40.0" prefWidth="200.0">
+                                                   <items>
+                                                      <RadioButton mnemonicParsing="false" text="Retuns Processed" />
+                                                   </items>
+                                                </ToolBar>
+                                                <ToolBar prefHeight="40.0" prefWidth="200.0">
+                                                   <items>
+                                                      <RadioButton mnemonicParsing="false" text="Customers" />
+                                                   </items>
+                                                </ToolBar>
+                                                <ToolBar prefHeight="40.0" prefWidth="200.0">
+                                                   <items>
+                                                      <RadioButton mnemonicParsing="false" text="Staff" />
+                                                   </items>
+                                                </ToolBar>
+                                                <Pane prefHeight="129.0" prefWidth="275.0">
+                                                   <children>
+                                                      <Label layoutX="122.0" layoutY="26.0" text="FIlters" />
+                                                      <ComboBox layoutX="14.0" layoutY="60.0" prefWidth="150.0" promptText="Period of Time" />
+                                                   </children>
+                                                </Pane>
+                                                <Pane disable="true" prefHeight="176.0" prefWidth="275.0">
+                                                   <children>
+                                                      <Label layoutX="29.0" layoutY="39.0" text="Ganancias totales: " />
+                                                      <TextField layoutX="130.0" layoutY="35.0" prefHeight="25.0" prefWidth="123.0" />
+                                                      <Label layoutX="29.0" layoutY="95.0" text="Share Value: " />
+                                                      <TextField layoutX="98.0" layoutY="91.0" prefHeight="25.0" prefWidth="157.0" promptText="En base a 1000 acciones " />
+                                                   </children>
+                                                </Pane>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
                                 </content>
                               </Tab>
                           </tabs>

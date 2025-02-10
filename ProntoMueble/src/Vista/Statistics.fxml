@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane disable="true" minHeight="0.0" minWidth="0.0" prefHeight="574.0" prefWidth="684.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Separator layoutX="321.0" layoutY="3.0" orientation="VERTICAL" prefHeight="567.0" prefWidth="41.0" />
+      <Separator layoutY="273.0" prefHeight="28.0" prefWidth="684.0" />
+      <AreaChart layoutX="21.0" layoutY="23.0" prefHeight="250.0" prefWidth="300.0">
+        <xAxis>
+          <CategoryAxis prefHeight="34.0" prefWidth="243.0" side="BOTTOM" tickLabelRotation="90.0" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </AreaChart>
+      <PieChart layoutX="362.0" layoutY="23.0" prefHeight="250.0" prefWidth="300.0" />
+      <TableView layoutX="21.0" layoutY="301.0" prefHeight="250.0" prefWidth="300.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+      </TableView>
+      <LineChart layoutX="362.0" layoutY="301.0" prefHeight="250.0" prefWidth="300.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </LineChart>
+   </children>
+</AnchorPane>
