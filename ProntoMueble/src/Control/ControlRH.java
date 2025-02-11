@@ -6,6 +6,8 @@ package Control;
 
 import Modelo.ConexionAzureSQL;
 import Modelo.Empleado;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -23,13 +25,17 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 
 public class ControlRH {
 
     @FXML private TableView<Empleado> empleadosExistentes;
+    @FXML private TableColumn<Empleado, String> colId, colNombre, colEmail, colTelefono, colRol, colContrato;
+    @FXML private TableColumn<Empleado, Double> colSueldo;
+    @FXML private TableColumn<Empleado, LocalDate> colFechaNac;
     @FXML private TextField idField, nombreField, emailField, telefonoField, sueldoField;
     @FXML private ComboBox<String> rolComboBox, contratoComboBox;
-    @FXML private Button okButton, despedirButton;
+    @FXML private Button okButton, despedirButton, contratarButton;
     @FXML private ImageView imagenView;
     @FXML private VBox root;
     
@@ -42,64 +48,23 @@ public class ControlRH {
     @FXML
     public void initialize() {
         llenarComboBoxes();
+        actualizarTablaEmpleados();
     }
 
     @FXML
-    public void buscarEmpleado(KeyEvent event) {
-        String idEmpleado = idField.getText();
-        if (idEmpleado.isEmpty()) {
-            clearFields();
-            return;
-        }
-        try (Connection connection = conexionAzureSQL.conectar();
-             PreparedStatement statement = connection.prepareStatement("SELECT * FROM V_Empleados WHERE id_empleado = ?")) {
-            statement.setString(1, idEmpleado);
-            ResultSet resultSet = statement.executeQuery();
-            if (resultSet.next()) {
-                nombreField.setText(resultSet.getString("nombre"));
-                emailField.setText(resultSet.getString("email"));
-                telefonoField.setText(resultSet.getString("telefono"));
-                sueldoField.setText(resultSet.getString("sueldo"));
-                rolComboBox.setValue(resultSet.getString("rol"));
-                contratoComboBox.setValue(resultSet.getString("tipo_contrato"));
-                String imagePath = resultSet.getString("imagen");
-                if (imagePath != null && !imagePath.isEmpty()) {
-                    imagenView.setImage(new Image(imagePath));
-                }
-            } else {
-                clearFields();
-                showAlert("Empleado no encontrado", "No se encontró un empleado con el ID especificado.");
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
+    public void abrirVistaContratar() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vista/VistaContratar.fxml"));
+            Stage stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(new Scene(loader.load()));
 
-    @FXML
-    public void actualizarEmpleado() {
-        String idEmpleado = idField.getText();
-        if (idEmpleado.isEmpty()) {
-            showAlert("Error", "Por favor, ingrese un ID de empleado válido.");
-            return;
-        }
-        try (Connection connection = conexionAzureSQL.conectar();
-             PreparedStatement statement = connection.prepareStatement(
-                     "UPDATE Empleado SET nombre = ?, email = ?, telefono = ?, sueldo = ?, id_rol = ?, id_tipoContrato = ? WHERE id_empleado = ?")) {
-            statement.setString(1, nombreField.getText());
-            statement.setString(2, emailField.getText());
-            statement.setString(3, telefonoField.getText());
-            statement.setBigDecimal(4, new BigDecimal(sueldoField.getText()));
-            statement.setInt(5, obtenerIdRol(rolComboBox.getValue()));
-            statement.setInt(6, obtenerIdTipoContrato(contratoComboBox.getValue()));
-            statement.setString(7, idEmpleado);
+            ControlContratar controlContratar = loader.getController();
+            controlContratar.setControlRH(this);
 
-            int rowsUpdated = statement.executeUpdate();
-            if (rowsUpdated > 0) {
-                showAlert("Éxito", "Empleado actualizado exitosamente.");
-            } else {
-                showAlert("Error", "No se pudo actualizar el empleado. Verifique los datos ingresados.");
-            }
-        } catch (SQLException e) {
+            stage.showAndWait();
+            actualizarTablaEmpleados();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -124,7 +89,30 @@ public class ControlRH {
     }
     
     public void actualizarTablaEmpleados() {
-        // Código para refrescar la tabla empleadosExistentes.
+        ObservableList<Empleado> listaEmpleados = FXCollections.observableArrayList();
+        
+        try (Connection connection = conexionAzureSQL.conectar();
+             PreparedStatement statement = connection.prepareStatement("SELECT id_empleado, nombre, email, telefono, sueldo, rol, tipo_contrato, fecha_nac FROM V_Empleados")) {
+            ResultSet resultSet = statement.executeQuery();
+            
+            while (resultSet.next()) {
+                Empleado empleado = new Empleado(
+                        resultSet.getDouble("sueldo"),
+                        resultSet.getString("rol"),
+                        resultSet.getString("tipo_contrato"),
+                        resultSet.getDate("fecha_nac").toLocalDate(),
+                        resultSet.getString("id_empleado"),
+                        resultSet.getString("nombre"),
+                        "",  // Dirección no está en la consulta
+                        resultSet.getString("telefono"),
+                        resultSet.getString("email")
+                );
+                listaEmpleados.add(empleado);
+            }
+            empleadosExistentes.setItems(listaEmpleados);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     private void llenarComboBoxes() {
@@ -190,5 +178,6 @@ public class ControlRH {
         alert.showAndWait();
     }
 }
+
 
 
