@@ -1,0 +1,5 @@
+johan se encarga de los controladores de customers,shop, payroll payment y statistics
+archila se encarga de controladores de human resource, refund y boss
+mateo se encarga de start, sales y Invetory
+
+quedan pendiente el login y los controladores para admin y vendedor 
