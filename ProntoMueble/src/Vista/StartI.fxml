@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox layoutX="9.0" layoutY="10.0" prefHeight="571.0" prefWidth="683.0">
+         <children>
+            <Pane prefHeight="151.0" prefWidth="200.0">
+               <children>
+                  <Label id="hola" layoutX="126.0" layoutY="59.0" styleClass="L1" text="Hola, " />
+                  <TextField id="TxtEmpleado" disable="true" layoutX="180.0" layoutY="55.0" prefHeight="34.0" prefWidth="323.0" promptText="BD" styleClass="textField" />
+                  <ImageView id="ImgEmpleado" fitHeight="111.64" fitWidth="111.64" layoutX="557.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </Pane>
+            <Pane prefHeight="420.0" prefWidth="695.0">
+               <children>
+                  <Label id="tusDatos" layoutX="126.0" layoutY="14.0" text="Tus datos" />
+                  <Separator layoutX="122.0" layoutY="84.0" prefHeight="4.0" prefWidth="491.0" />
+                  <Label layoutX="126.0" layoutY="115.0" styleClass="L1" text="ID:" />
+                  <Label layoutX="126.0" layoutY="160.0" styleClass="L1" text="Nombre: " />
+                  <Label layoutX="126.0" layoutY="341.0" styleClass="L1" text="Email: " />
+                  <Label layoutX="126.0" layoutY="250.0" styleClass="L1" text="Telefono: " />
+                  <Label layoutX="126.0" layoutY="295.0" styleClass="L1" text="Dirección: " />
+                  <Label layoutX="126.0" layoutY="205.0" styleClass="L1" text="Rol: " />
+                  <Label layoutX="382.0" layoutY="115.0" styleClass="L1" text="Edad: " />
+                  <TextField id="TxtId" disable="true" layoutX="149.0" layoutY="108.0" prefHeight="43.0" prefWidth="228.0" promptText="BD" styleClass="textField" />
+                  <Separator layoutX="376.0" layoutY="84.0" orientation="VERTICAL" prefHeight="203.0" prefWidth="4.0" />
+                  <TextField id="TxtNombre" disable="true" layoutX="198.0" layoutY="154.0" prefHeight="43.0" prefWidth="179.0" promptText="BD" styleClass="textField" />
+                  <TextField id="TxtEmail" disable="true" layoutX="172.0" layoutY="334.0" prefHeight="43.0" prefWidth="430.0" promptText="BD" styleClass="textField" />
+                  <TextField id="TxtTelefono" disable="true" layoutX="198.0" layoutY="243.0" prefHeight="43.0" prefWidth="179.0" promptText="BD" styleClass="textField" />
+                  <TextField id="TxtDireccion" disable="true" layoutX="208.0" layoutY="288.0" prefHeight="43.0" prefWidth="395.0" promptText="BD" styleClass="textField" />
+                  <TextField id="TxtRol" disable="true" layoutX="153.0" layoutY="198.0" prefHeight="43.0" prefWidth="223.0" promptText="BD" styleClass="textField" />
+                  <TextField id="TxtEdad" disable="true" layoutX="425.0" layoutY="108.0" prefHeight="43.0" prefWidth="244.0" promptText="BD" styleClass="textField" />
+                  <Label layoutX="382.0" layoutY="160.0" styleClass="L1" text="Contrato: " />
+                  <Label layoutX="382.0" layoutY="205.0" styleClass="L1" text="Sueldo: " />
+                  <TextField id="TxtContrato" disable="true" layoutX="461.0" layoutY="153.0" prefHeight="42.0" prefWidth="210.0" promptText="BD" styleClass="textField" />
+                  <TextField id="TxtSueldo" disable="true" layoutX="442.0" layoutY="198.0" prefHeight="43.0" prefWidth="228.0" promptText="BD" styleClass="textField" />
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
