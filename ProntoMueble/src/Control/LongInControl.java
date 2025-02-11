@@ -7,6 +7,9 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
@@ -55,52 +58,24 @@ public class LongInControl {
         }
     }
     
-    public void abrirVentanaPrincipal(String id){
-        
-    }
-        
-   /* public DefaultTableModel consultLongIn() {
-        DefaultTableModel plantilla = new DefaultTableModel();
-        ConexionAzureSQL con = new ConexionAzureSQL(); // Asegúrate de que tu clase Conexion maneje Azure SQL correctamente
-
+    private void abrirVentanaPrincipal(String usuario) {
         try {
-            con.conectar(); // Método para establecer la conexión
-            JOptionPane.showMessageDialog(null, con.getMensaje());
-            
-            Statement consulta = con.getConexion().createStatement();
-            String sql = "SELECT nombre r  FROM Empleado WHERE id="+id_empleado; // Ajusta según tu estructura
-            
-            ResultSet datos = consulta.executeQuery(sql);
-            ResultSetMetaData campos = datos.getMetaData();
-            
-            // Agregar nombres de columnas al modelo
-            for (int i = 1; i <= campos.getColumnCount(); i++) {
-                plantilla.addColumn(campos.getColumnName(i));
-            }
-            
-            // Llenar filas con los datos
-            while (datos.next()) {
-                Object fila[] = new Object[campos.getColumnCount()];
-                for (int i = 0; i < campos.getColumnCount(); i++) {
-                    fila[i] = datos.getObject(i + 1);
-                }
-                plantilla.addRow(fila);
-            }
-            
-            // Cerrar recursos
-            datos.close();
-            consulta.close();
-            con.getConexion().close();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vista/Principal.fxml"));
+            Parent root = loader.load();  // Primero se carga la vista
 
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error SQL: " + ex.getMessage());
+            // Obtener el controlador correctamente
+            PrincipalControl principalController = loader.getController();
+
+            principalController.setUsuario(usuario); // Enviar el usuario autenticado
+
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Main Window");
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Error al cargar Principal.fxml");
         }
-        
-        return plantilla;
     }
-}
-*/
-    
-    
-    
+         
 }
