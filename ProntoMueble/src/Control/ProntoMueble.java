@@ -4,11 +4,17 @@
  */
 package Control;
 
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
 /**
  *
  * @author Mateo
  */
-public class ProntoMueble extends{
+public class ProntoMueble extends Application{
     public void start(Stage primaryStage) {
         try {
             // Cargar la vista correctamente
