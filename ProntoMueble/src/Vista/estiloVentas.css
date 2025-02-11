@@ -1,0 +1,148 @@
+.P1{/*panel prin cipal*/
+    -fx-background-color: #878fff;
+}
+/*diferenciar paneles*/
+.P2{
+    -fx-background-color: #009fad;
+    
+}
+.P3{
+    -fx-background-color: #ffffff;
+}
+.P4{
+    -fx-background-color: #656565;
+}
+.imageProduct {
+    -fx-fit-width: 188px; /* Ancho fijo */
+    -fx-fit-height: 112px; /* Alto fijo */
+    -fx-preserve-ratio: true; /* Mantener proporción */
+    -fx-background-image-radius: 60px; /* Bordes redondeados */
+    -fx-border-image-radius: 60px 60px 0 0;
+}
+
+/* Estilo genérico para los paneles contenedores */
+.panelWidgets {
+    -fx-background-color: #ffffff; /* Fondo blanco */
+    -fx-border-width: 4; /* Ancho del borde */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 2, 2); /* Sombra */
+    -fx-background-radius: 60px 60px 0 0; /* Bordes redondeados */
+    -fx-border-radius: 60px 60px 0 0; /* Bordes redondeados */
+    -fx-padding: 0; /* Sin relleno extra */
+    
+}
+
+/* Panel con borde azul */
+.panel-borde-azul {
+    -fx-border-color: #0077FF; /* Azul vibrante */
+}
+
+/* Panel con borde rojo */
+.panel-borde-rojo {
+    -fx-border-color: #FF0000; /* Rojo vibrante */
+}
+
+.button {
+    -fx-background-color: transparent; 
+    -fx-border-width: 0px;            /* Sin bordes visibles */
+    -fx-font-size: 0px;            /* Tamaño del texto */
+    -fx-cursor: hand;               /* Cambia el cursor al pasar sobre el botón */
+}
+.button:hover {
+    -fx-background-color: activeborder;  
+}
+.button:pressed{
+    -fx-border-width: 2px;
+    -fx-border-color: #005a9e;
+}
+.textField{
+    -fx-fill: #000000;               /* Color del texto */
+    -fx-background-color: transparent;
+    -fx-font-family: 'Ebrima',sans-serif;
+    -fx-font-size: 14px;
+    -fx-border-width: 0 0 0 0;
+}
+#TxtAlto.textField{
+    -fx-border: 0 0 2px 0;
+    -fx-border-color: #005a9e;
+
+}
+#TxtLargo.textField{
+    -fx-border: 0 0 2px 0;
+    -fx-border-color: #005a9e;
+}
+#TxtAncho.textField{
+    -fx-border: 0 0 2px 0;
+    -fx-border-color: #005a9e;
+}
+.textField:pressed {
+    -fx-background-color: #c3c3c3;
+    -fx-border: 2px 2px 2px 2px;       /* Aumenta el grosor de la línea para destacar */
+    -fx-border-color: #000000;       /* Cambia el color de la línea cuando está enfocado */
+    
+}
+.textField:hover{
+    -fx-background-color: #f0f0f0;
+    -fx-border: 2px 2px 2px 2px;       /* Aumenta el grosor de la línea para destacar */
+    -fx-border-color: #000000;       /* Cambia el color de la línea cuando está enfocado */ 
+}
+.textField:focused{
+    -fx-background-color: #c3c3c3;
+    -fx-border: 3px 3px 3px 3px;       /* Aumenta el grosor de la línea para destacar */
+    -fx-border-color: #0077FF;       /* Cambia el color de la línea cuando está enfocado */ 
+}
+.toolbar {
+    -fx-background-color: transparent; 
+}
+.combo-box {
+    -fx-background-color: transparent; 
+    -fx-border-color: #005a9e;     
+}   
+.combo-box .arrow-button {
+    -fx-background-color: transparent; /* Flecha sin fondo */
+    -fx-padding: 100%;                     /* Sin relleno */
+}
+.combo-box .text {
+    -fx-font-family: 'Ebrima',sans-serif;
+    -fx-font-size: 10px;
+    -fx-text-fill: #000000; /* Color del texto */
+}
+.combo-box .list-cell {
+    -fx-background-color: #f0f0f0; /* Color de fondo de las opciones desplegadas */
+}
+.combo-box .list-cell:hover {
+    -fx-background-color: #dcdcdc; /* Color de fondo cuando pasas el mouse por encima */
+}
+.combo-box:focused {
+    -fx-background-color: transparent; /* Fondo transparente cuando el ComboBox está enfocado */
+    -fx-border-color: #0078d4;    
+    -fx-border-width: 2;
+}
+
+/*titledpane*/
+/* Estilo general para el TitledPane */
+.titled-pane {
+    -fx-border-color: #005a9e; /* Borde azul */
+    -fx-border-width: 2px; /* Grosor del borde */
+    -fx-border-radius: 0px; /* Bordes ligeramente redondeados */
+}
+
+/* Estilo del encabezado del TitledPane */
+.titled-pane > .title {
+    -fx-background-color: transparent; /* Fondo transparente */
+    -fx-font-family: 'Ebrima', sans-serif; /* Fuente personalizada */
+    -fx-font-size: 10px; /* Tamaño de la fuente */
+    -fx-text-fill: #000000; /* Color del texto */
+}
+
+/* Flecha del TitledPane */
+.titled-pane > .arrow-button {
+    -fx-background-color: transparent; /* Sin fondo para la flecha */
+    -fx-alignment: center-left; /* Alinea la flecha a la derecha */
+    -fx-padding: 0; /* Sin relleno adicional */
+}
+
+.titled-pane > .arrow-button > .arrow {
+    -fx-shape: "M0,0 L4,8 L0,16 Z"; /* Flecha triangular */
+    -fx-background-color: #005a9e; /* Color de la flecha */
+    -fx-alignment: center-left; /* Alinea la flecha a la derecha */
+}

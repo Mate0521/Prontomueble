@@ -1,0 +1,169 @@
+--ACLARACIONES:  SERIAL=INTEGER AUTOINCREMENT ; NUMERIC(X,Y)= X la cantidad de digitos en total Y la cantidad maxima de digitos despues de la coma ; 
+--TEXT=variable de texto largo 
+
+-- Tabla: Tipo_mueble
+CREATE TABLE Tipo_mueble (
+    id_tipoMueble INT IDENTITY(1,1) PRIMARY KEY,
+    nombre VARCHAR(50) NOT NULL
+);
+
+-- Tabla: Color
+CREATE TABLE Color (
+    id_color INT IDENTITY(1,1) PRIMARY KEY,
+    nombre VARCHAR(50) NOT NULL
+);
+
+-- Tabla: Material
+CREATE TABLE Material (
+    id_material INT IDENTITY(1,1) PRIMARY KEY,
+    nombre VARCHAR(50) NOT NULL
+);
+-- Tabla: Metodo_Pago
+CREATE TABLE Metodo_Pago (
+    id_metodoPago INT IDENTITY(1,1) PRIMARY KEY,
+    nombre VARCHAR(50) NOT NULL UNIQUE
+);
+
+-- Tabla: Mueble
+CREATE TABLE Mueble (
+    id_mueble INT IDENTITY(1,1) PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    cantidad INTEGER NOT NULL,
+    alto  DECIMAL(10, 2),
+    largo  DECIMAL(10, 2),
+    ancho  DECIMAL(10, 2),
+    imagen VARCHAR(MAX),
+    precio  DECIMAL(12, 2) NOT NULL,
+    garantia VARCHAR(100),
+    fecha_terminacion DATE,
+    id_material INTEGER NOT NULL REFERENCES Material(id_material),
+    id_color INTEGER NOT NULL REFERENCES Color(id_color),
+    id_tipoMueble INTEGER NOT NULL REFERENCES Tipo_mueble(id_tipoMueble)
+);
+
+-- Tabla: Proveedores
+CREATE TABLE Proveedores (
+    id_proveedores INT IDENTITY(1,1) PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    direccion VARCHAR(200),
+    responsable VARCHAR(100),
+    telefono VARCHAR(15),
+    fecha_inicio DATE NOT NULL,
+    fecha_terminacion DATE,
+    id_tipoMueble INTEGER REFERENCES Tipo_mueble(id_tipoMueble)
+);
+
+-- Tabla: Compra
+CREATE TABLE Compra (
+    id_proveedores INTEGER NOT NULL REFERENCES Proveedores(id_proveedores),
+    id_mueble INTEGER NOT NULL REFERENCES Mueble(id_mueble),
+    cantidad INTEGER NOT NULL,
+    fecha_E DATE NOT NULL,
+    costos  DECIMAL(12, 2),
+    id_metodoPago INTEGER NOT NULL REFERENCES Metodo_Pago(id_metodoPago),
+    PRIMARY KEY (id_proveedores, id_mueble)
+);
+
+-- Tabla: Rol
+CREATE TABLE Rol (
+    id_rol INT IDENTITY(1,1) PRIMARY KEY,
+    nombre VARCHAR(50) NOT NULL
+);
+
+-- Tabla: Tipo_Contrato
+CREATE TABLE Tipo_Contrato (
+    id_tipoContrato INT IDENTITY(1,1) PRIMARY KEY,
+    nombre VARCHAR(50) NOT NULL
+);
+
+-- Tabla: Empleado
+CREATE TABLE Empleado (
+    id_empleado INT IDENTITY(1,1) PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    telefono VARCHAR(15),
+    email VARCHAR(100),
+    sueldo  DECIMAL(12, 2) NOT NULL,
+    fecha_nac DATE,
+    fecha_inicio DATE NOT NULL,
+    fecha_terminacion DATE,
+    id_tipoContrato INTEGER NOT NULL REFERENCES Tipo_Contrato(id_tipoContrato),
+    id_rol INTEGER NOT NULL REFERENCES Rol(id_rol)
+);
+
+-- Tabla: Nomina
+CREATE TABLE Nomina (
+    id_registroNomina INT IDENTITY(1,1) PRIMARY KEY,
+    sueldo  DECIMAL(12, 2) NOT NULL,
+    bonos  DECIMAL(12, 2),
+    fecha_pago DATE NOT NULL
+);
+
+-- Tabla: Registro_nomina
+CREATE TABLE Registro_nomina (
+    id_registroNomina INTEGER NOT NULL REFERENCES Nomina(id_registroNomina),
+    id_empleado INTEGER NOT NULL REFERENCES Empleado(id_empleado),
+    id_metodoPago INTEGER NOT NULL REFERENCES Metodo_Pago(id_metodoPago),
+    PRIMARY KEY (id_registroNomina, id_empleado)
+);
+
+-- Tabla: Cliente
+CREATE TABLE Cliente (
+    id_cliente INT IDENTITY(1,1) PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    direccion VARCHAR(200),
+    telefono VARCHAR(15),
+    email VARCHAR(100),
+    estado VARCHAR(50),
+    fecha_inicio DATE NOT NULL,
+);
+
+-- Tabla: Venta
+CREATE TABLE Venta (
+    id_venta INT IDENTITY(1,1) PRIMARY KEY,
+    fecha DATE NOT NULL,
+    total  DECIMAL(12, 2) NOT NULL,
+    id_metodoPago INTEGER NOT NULL REFERENCES Metodo_Pago(id_metodoPago),
+    id_empleado INTEGER NOT NULL REFERENCES Empleado(id_empleado),
+    id_cliente INTEGER NOT NULL REFERENCES Cliente(id_cliente)
+);
+
+-- Tabla: Registrar
+CREATE TABLE Registrar (
+    id_venta INTEGER NOT NULL REFERENCES Venta(id_venta),
+    id_mueble INTEGER NOT NULL REFERENCES Mueble(id_mueble),
+    cantidad INTEGER NOT NULL,
+    PRIMARY KEY (id_venta, id_mueble)
+);
+
+-- Tabla: Pago
+CREATE TABLE Pago (
+    id_pago INT IDENTITY(1,1) PRIMARY KEY,
+    monto  DECIMAL(12, 2) NOT NULL,
+    metodo_pago VARCHAR(50) NOT NULL,
+    cuotas INTEGER
+);
+
+-- Tabla: Devolucion
+CREATE TABLE Devolucion (
+    id_devoluciones INT IDENTITY(1,1) PRIMARY KEY,
+    id_venta INTEGER NOT NULL REFERENCES Venta(id_venta),
+    id_muebleDevuelto INTEGER NOT NULL,
+    motivo VARCHAR(MAX),
+    validacion BIT
+);
+
+-- Tabla: Mueble_devuelto
+CREATE TABLE Mueble_devuelto (
+    id_muebleDevuelto INT IDENTITY(1,1) PRIMARY KEY,
+    id_devolucion INTEGER NOT NULL REFERENCES Devolucion(id_devoluciones),
+    nombre VARCHAR(100) NOT NULL,
+    cantidad INTEGER NOT NULL,
+    alto  DECIMAL(10, 2),
+    largo  DECIMAL(10, 2),
+    ancho  DECIMAL(10, 2),
+    imagen VARCHAR(MAX),
+    precio  DECIMAL(12, 2),
+    id_material INTEGER NOT NULL REFERENCES Material(id_material),
+    id_color INTEGER NOT NULL REFERENCES Color(id_color),
+    id_tipoMueble INTEGER NOT NULL REFERENCES Tipo_mueble(id_tipoMueble)
+);

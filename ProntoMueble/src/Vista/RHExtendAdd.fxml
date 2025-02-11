@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="300.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.ProntoMueble">
+   <stylesheets>
+      <URL value="@estiloInvetarioExtend.css" />
+   </stylesheets>
+   <children>
+      <VBox prefHeight="440.0" prefWidth="300.0">
+         <children>
+            <ToolBar prefHeight="40.0" prefWidth="200.0">
+               <items>
+                  <Label text="Nombre: " />
+                  <TextField prefHeight="25.0" prefWidth="193.0" />
+               </items>
+            </ToolBar>
+            <ToolBar prefHeight="40.0" prefWidth="200.0">
+               <items>
+                  <Label text="Telefono: " />
+                  <TextField prefHeight="25.0" prefWidth="191.0" />
+               </items>
+            </ToolBar>
+            <ToolBar prefHeight="40.0" prefWidth="200.0">
+               <items>
+                  <Label text="Email: " />
+                  <TextField prefHeight="25.0" prefWidth="209.0" />
+               </items>
+            </ToolBar>
+            <ToolBar prefHeight="40.0" prefWidth="200.0">
+               <items>
+                  <ComboBox prefHeight="25.0" prefWidth="247.0" promptText="Rol" />
+               </items>
+            </ToolBar>
+            <ToolBar prefHeight="40.0" prefWidth="200.0">
+               <items>
+                  <ComboBox prefHeight="25.0" prefWidth="247.0" promptText="Contrato" />
+               </items>
+            </ToolBar>
+            <ToolBar prefHeight="40.0" prefWidth="200.0">
+               <items>
+                  <Label text="Fecha de nacimiento: " />
+                  <Spinner prefHeight="25.0" prefWidth="48.0" />
+                  <Spinner layoutX="129.0" layoutY="12.0" prefHeight="25.0" prefWidth="45.0" />
+                  <Spinner layoutX="189.0" layoutY="12.0" prefHeight="25.0" prefWidth="55.0" />
+               </items>
+            </ToolBar>
+            <ToolBar prefHeight="40.0" prefWidth="200.0">
+               <items>
+                  <Label text="Sueldo: " />
+                  <TextField prefHeight="25.0" prefWidth="197.0" />
+               </items>
+            </ToolBar>
+            <ToolBar prefHeight="40.0" prefWidth="200.0">
+               <items>
+                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="285.0" text="Imagen" />
+               </items>
+            </ToolBar>
+            <Pane prefHeight="80.0" prefWidth="300.0" />
+            <ToolBar prefHeight="40.0" prefWidth="200.0">
+               <items>
+                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="281.0" text="Contratar" />
+               </items>
+            </ToolBar>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
