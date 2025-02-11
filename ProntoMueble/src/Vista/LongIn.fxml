@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="558.0" prefWidth="923.0" styleClass="P1" stylesheets="@estilo1.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="558.0" prefWidth="923.0" styleClass="P1" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
  <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="97.0" prefWidth="132.0" styleClass="image-view">
     <children>
@@ -51,16 +51,16 @@
                         <Pane prefHeight="182.0" prefWidth="318.0">
                            <children>
                               <Label layoutX="51.0" layoutY="54.0" styleClass="L4" text="Identificación" />
-                              <TextField id="IdentificacionIniSecion" layoutX="51.0" layoutY="78.0" prefHeight="25.0" prefWidth="242.0" />
+                              <TextField id="IdIniSecion" layoutX="51.0" layoutY="78.0" prefHeight="25.0" prefWidth="242.0" />
                               <Label layoutX="51.0" layoutY="133.0" styleClass="L4" text="Contraseña" />
-                              <PasswordField id="PaswordIniSecion" layoutX="51.0" layoutY="161.0" prefHeight="30.0" prefWidth="243.0" />
+                              <PasswordField id="PassIniSecion" layoutX="51.0" layoutY="161.0" prefHeight="30.0" prefWidth="243.0" />
                            </children></Pane>
                      </content></Tab>
               </tabs>
             </TabPane>
             <Pane prefHeight="63.0" prefWidth="318.0">
                <children>
-                  <Button id="BtnSiguiente" layoutX="110.0" layoutY="13.0" mnemonicParsing="false" text="Siguiente" />
+                  <Button id="BtnSiguiente" layoutX="126.0" layoutY="14.0" mnemonicParsing="false" text="Siguiente" />
                </children>
             </Pane>
          </children>
