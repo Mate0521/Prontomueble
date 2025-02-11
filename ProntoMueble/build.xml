@@ -8,6 +8,19 @@
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
 <project name="ProntoMueble" default="default" basedir=".">
+<<<<<<< Updated upstream
+=======
+    <description>Builds, tests, and runs the project ProntoMueble.</description>
+    <!-- Definir el classpath con el driver de SQL Server -->
+    <path id="project.classpath">
+        <pathelement path="lib/mssql-jdbc-12.8.1.jre11.jar"/>
+    </path>
+    <import file="nbproject/build-impl.xml"/>
+    <!-- Definir el classpath con el driver de SQL Server -->
+    <path id="project.classpath">
+        <pathelement path="lib/mssql-jdbc-12.8.1.jre11.jar"/>
+    </path>
+>>>>>>> Stashed changes
 
     <description>Builds, tests, and runs the project ProntoMueble.</description>
 
