@@ -4,15 +4,17 @@
  */
 package Control;
 
+import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import static javafx.application.Application.launch;
 
 /**
  *
- * @author Mateo
+ * @author Mateo 57319
  */
 public class ProntoMueble extends Application{
     @Override
@@ -26,9 +28,18 @@ public class ProntoMueble extends Application{
             primaryStage.setScene(scene);
             primaryStage.setTitle("Inicio de Sesión");
             primaryStage.show();
-        } catch (Exception e) {
-            e.printStackTrace(); // Imprime el error en consola para depuración
+        } catch (IOException e) { // Imprime el error en consola para depuración
+            // Imprime el error en consola para depuración
             System.out.println("Error al cargar la vista LongIn.fxml");
         }
+    }
+    
+    
+     /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+       
+       launch(args); // Inicia la aplicación JavaFX
     }
 }
