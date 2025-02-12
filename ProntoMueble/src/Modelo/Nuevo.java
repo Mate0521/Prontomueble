@@ -7,8 +7,8 @@ package Modelo;
 public class Nuevo extends Mueble{
     private int garantia;
 
-    public Nuevo(int garantia, String nombre, String dimenciones, String color, String material, String id) {
-        super(nombre, dimenciones, color, material, id);
+    public Nuevo(int garantia, String nombre, String dimenciones, String color, String material, String id, int cantidad) {
+        super(nombre, dimenciones, color, material, id, cantidad);
         this.garantia = garantia;
     }
     

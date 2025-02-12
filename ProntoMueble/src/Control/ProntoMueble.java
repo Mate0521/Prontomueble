@@ -15,6 +15,7 @@ import javafx.stage.Stage;
  * @author Mateo
  */
 public class ProntoMueble extends Application{
+    @Override
     public void start(Stage primaryStage) {
         try {
             // Cargar la vista correctamente

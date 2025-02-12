@@ -6,8 +6,8 @@ package Control;
 
 /**
  *
- * @author ASUS
+ * @author mateo
  */
-public class Main {
+public class Control {
     
 }

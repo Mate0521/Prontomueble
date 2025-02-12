@@ -34,7 +34,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<fx:root id="AnchorPane" prefHeight="600.0" prefWidth="1150.0" styleClass="mainFxmlClass" type="AnchorPane" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.ProntoMueble">
+<fx:root id="AnchorPane" prefHeight="600.0" prefWidth="1150.0" styleClass="mainFxmlClass" type="AnchorPane" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.LongInControl">
     <stylesheets>
         <URL value="@principal_p1.css" />
     </stylesheets>
@@ -43,7 +43,7 @@
          <children>
             <MenuBar>
               <menus>
-                <Menu mnemonicParsing="false" text="Start">
+                <Menu id="P_Start" mnemonicParsing="false" text="Start">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -51,10 +51,10 @@
                            </image>
                         </ImageView>
                      </graphic></Menu>
-                <Menu mnemonicParsing="false" text="Sale">
+                <Menu id="P_Sale" mnemonicParsing="false" text="Sale">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="Products" />
-                        <MenuItem mnemonicParsing="false" text="Shopping cart" />
+                    <MenuItem id="MI_Products" mnemonicParsing="false" text="Products" />
+                        <MenuItem id="MI_ShoppingCart" mnemonicParsing="false" text="Shopping cart" />
                   </items>
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
@@ -64,11 +64,11 @@
                         </ImageView>
                      </graphic>
                 </Menu>
-                  <Menu mnemonicParsing="false" text="Inventory">
+                  <Menu id="P_Inventory" mnemonicParsing="false" text="Inventory">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="Delate" />
-                      <MenuItem mnemonicParsing="false" text="Add" />
-                        <MenuItem mnemonicParsing="false" text="Modify product" />
+                        <MenuItem id="MI_IDel" mnemonicParsing="false" text="Delate" />
+                      <MenuItem id="MI_IAdd" mnemonicParsing="false" text="Add" />
+                        <MenuItem id="MI_IMod" mnemonicParsing="false" text="Modify product" />
                     </items>
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
@@ -78,11 +78,11 @@
                         </ImageView>
                      </graphic>
                   </Menu>
-                  <Menu mnemonicParsing="false" text="Human Resources">
+                  <Menu id="P_HumanResources" mnemonicParsing="false" text="Human Resources">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="Hire" />
-                      <MenuItem mnemonicParsing="false" text="Dismiss" />
-                        <MenuItem mnemonicParsing="false" text="Change Attribute" />
+                        <MenuItem id="MI_Hire" mnemonicParsing="false" text="Hire" />
+                      <MenuItem id="MI_Dis" mnemonicParsing="false" text="Dismiss" />
+                        <MenuItem id="MI_Chang" mnemonicParsing="false" text="Change Attribute" />
                     </items>
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
@@ -92,10 +92,10 @@
                         </ImageView>
                      </graphic>
                   </Menu>
-                  <Menu mnemonicParsing="false" text="Refund">
+                  <Menu id="P_Refund" mnemonicParsing="false" text="Refund">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="Make a Refund" />
-                      <MenuItem mnemonicParsing="false" text="Query" />
+                        <MenuItem id="MI_MakeRef" mnemonicParsing="false" text="Make a Refund" />
+                      <MenuItem id="MI_Query" mnemonicParsing="false" text="Query" />
                     </items>
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
@@ -105,13 +105,7 @@
                         </ImageView>
                      </graphic>
                   </Menu>
-                  <Menu mnemonicParsing="false" text="Statistics">
-                    <items>
-                      <MenuItem mnemonicParsing="false" text="By Saller" />
-                        <MenuItem mnemonicParsing="false" text="Profit Margin" />
-                        <MenuItem mnemonicParsing="false" text="Inventoty Status " />
-                        <MenuItem mnemonicParsing="false" text="Supplier Relationship" />
-                    </items>
+                  <Menu id="P_Statistics" mnemonicParsing="false" text="Statistics">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -120,7 +114,7 @@
                         </ImageView>
                      </graphic>
                   </Menu>
-                  <Menu mnemonicParsing="false" text="Boss">
+                  <Menu id="P_Boss" mnemonicParsing="false" text="Boss">
                     <items>
                       <MenuItem mnemonicParsing="false" text="Shopping" />
                         <MenuItem mnemonicParsing="false" text="Customers " />
@@ -133,7 +127,7 @@
                         </ImageView>
                      </graphic>
                   </Menu>
-                <Menu mnemonicParsing="false" text="Help">
+                <Menu id="P_Help" mnemonicParsing="false" text="Help">
                   <items>
                     <MenuItem mnemonicParsing="false" text="About" />
                   </items>
@@ -152,9 +146,9 @@
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
                 <AnchorPane id="panel_base" fx:id="panel_base" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                      <children>
-                        <TabPane prefHeight="526.0" prefWidth="278.0" tabClosingPolicy="UNAVAILABLE">
+                        <TabPane id="P_tabP" prefHeight="526.0" prefWidth="278.0" tabClosingPolicy="UNAVAILABLE">
                           <tabs>
-                            <Tab id="PL_ventas" text="Sale">
+                            <Tab id="PL_Sales" text="Sale">
                               <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="492.0" prefWidth="275.0">
                                        <children>
@@ -309,7 +303,7 @@
                                        </children></AnchorPane>
                                 </content>
                               </Tab>
-                              <Tab text="Statistics">
+                              <Tab id="PL_statistics" text="Statistics">
                                 <content>
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>

@@ -1,6 +1,8 @@
 package Modelo;
 
+import java.time.Instant;
 import java.time.LocalDate;
+import java.util.Date;
 
 /**
  *
@@ -9,15 +11,16 @@ import java.time.LocalDate;
 public class Empleado extends Persona{
 
     private double sueldo;
-    private String rol, contrato;
-    private LocalDate fecha_nac;
+    private String rol, contrato, contraseña;
+    private Date fecha_nac;
 
-    public Empleado(double Sueldo, String rol, String contrato, LocalDate fecha_nac, String id, String nombre, String direccion, String telefono, String email) {
+    public Empleado(double Sueldo, String rol, String contrato, Date fecha_nac, String id, String nombre, String direccion, String telefono, String email, String contraseña) {
         super(id, nombre, direccion, telefono, email);
         this.sueldo = Sueldo;
         this.rol = rol;
         this.contrato = contrato;
         this.fecha_nac = fecha_nac;
+        this.contraseña= contraseña;
     }
 
     public Empleado() {
@@ -25,7 +28,8 @@ public class Empleado extends Persona{
         this.sueldo = 0.0;
         this.rol = "";
         this.contrato = "";
-        this.fecha_nac = LocalDate.now();
+        this.fecha_nac = Date.from(Instant.MIN);
+        this.contraseña="";
     }
 
     public double getSueldo() {
@@ -52,13 +56,24 @@ public class Empleado extends Persona{
         this.contrato = contrato;
     }
 
-    public LocalDate getFecha_nac() {
+    public Date getFecha_nac() {
         return fecha_nac;
     }
 
-    public void setFecha_nac(LocalDate fecha_nac) {
+    public void setFecha_nac(Date fecha_nac) {
         this.fecha_nac = fecha_nac;
     }
+
+    public String getContraseña() {
+        return contraseña;
+    }
+
+    public void setContraseña(String contraseña) {
+        this.contraseña = contraseña;
+    }
+    
+    
+
 
     @Override
     public String toString() {

@@ -8,8 +8,8 @@ package Modelo;
 public class Usado extends Mueble{
     private String id_devolucion;
 
-    public Usado(String id_devolucion, String nombre, String dimenciones, String color, String material) {
-        super(nombre, dimenciones, color, material, color);
+    public Usado(String id_devolucion, String nombre, String dimenciones, String color, String material,int cantidad) {
+        super(nombre, dimenciones, color, material, color,cantidad);
         this.id_devolucion = id_devolucion;
     }
     
