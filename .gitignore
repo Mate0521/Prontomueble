@@ -1,6 +1,8 @@
 /ProntoMueble/nbproject/private/
 /filechioose/nbproject/private/
 *.jpg
+nbproject/private/
+ProntoMueble/nbproject/private/private.properties
 /ProntoMueble/build/
 /ProntoMueble/dist/
 nbproject/private/
