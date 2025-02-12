@@ -3,3 +3,4 @@
 *.jpg
 /ProntoMueble/build/
 nbproject/private/
+ProntoMueble/nbproject/private/private.properties
