@@ -7,12 +7,13 @@ public class Mueble {
     private String nombre, dimenciones, color, material, id ;
     private int catntidad;
 
-    public Mueble(String nombre, String dimenciones, String color, String material, String id) {
+    public Mueble(String nombre, String dimenciones, String color, String material, String id,int cantidad) {
         this.nombre = nombre;
         this.dimenciones = dimenciones;
         this.color = color;
         this.material = material;
         this.id = id;
+        this.catntidad=cantidad;
     }
     
     public Mueble() {
@@ -21,6 +22,7 @@ public class Mueble {
         this.color = "";
         this.material = "";
         this.id = "";
+        this.catntidad=0;
     }
 
     public String getNombre() {
@@ -65,10 +67,18 @@ public class Mueble {
     public String toStrinDimenciones(double alto, double largo, double ancho){
         return this.dimenciones="h"+alto+"l"+largo+"w"+ancho;
     }
+
+    public int getCatntidad() {
+        return catntidad;
+    }
+
+    public void setCatntidad(int catntidad) {
+        this.catntidad = catntidad;
+    }
     
     @Override
     public String toString() {
-        return "Mueble: \nID=" + this.id +"\nnombre=" + this.nombre + "\nDimenciones=" + this.dimenciones + "\nColor=" + this.color + "\nMaterial=" + this.material ;
+        return "Mueble: \nID=" + this.id +"\nnombre=" + this.nombre + "\nDimenciones=" + this.dimenciones + "\nColor=" + this.color + "\nMaterial=" + this.material +"\nCantidad="+this.catntidad;
     }
             
         

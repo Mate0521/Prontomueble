@@ -85,12 +85,10 @@ public class SaleControl {
             
             if (rs.next()) {
                 ObMueble.setNombre(rs.getString("nombre"));
-                ObMueble.setCantidad(rs.getInt("cantidad"));
+                ObMueble.setCatntidad(rs.getInt("cantidad"));
                 ObMueble.toStrinDimenciones(rs.getDouble("alto"),rs.getDouble("largo"),rs.getDouble("ancho"));
-                ObMueble.setGarantia(rs.getString("garantia"));
-                ObMueble.setMaterialNombre(rs.getString("ma.nombre")); // Nombre del material
-                ObMueble.setColorNombre(rs.getString("co.nombre")); // Nombre del color
-
+                ObMueble.setGarantia(rs.getInt("garantia"));
+                
             }
             
             } catch (SQLException e) {
