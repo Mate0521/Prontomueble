@@ -30,20 +30,16 @@ public class ConexionAzureSQL {
         return this.conexion;
     }
 
-    public Connection conectarEmpleado(int usuario, String clave) {// a tener en cuenta que el usuario es el nombre mas el id
+    public Connection conectarEmpleado(String usuario, String clave) {// a tener en cuenta que el usuario es el nombre mas el id
         String url = "jdbc:sqlserver://bd-principal.database.windows.net:1433;"
                    + "database=ProntoMueble;"
                    + "encrypt=true;trustServerCertificate=false;loginTimeout=30;";
         
         try {
-            conexion = DriverManager.getConnection(url, Integer.toString(usuario), clave);
+            conexion = DriverManager.getConnection(url, usuario, clave);
             mensaje = "Conexión exitosa con el usuario: " + usuario;
             System.out.println(mensaje);
             return conexion;
-        } catch (SQLException ex) {
-            mensaje = "Error de autenticación: " + ex.getMessage();
-            System.out.println(mensaje);
-            return null;
         } catch (Exception ex) {
            mensaje=" No se puede conectar con MySQL...";
            return null;

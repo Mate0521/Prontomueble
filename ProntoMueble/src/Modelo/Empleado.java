@@ -11,15 +11,16 @@ import java.util.Date;
 public class Empleado extends Persona{
 
     private double sueldo;
-    private String rol, contrato;
+    private String rol, contrato, contraseña;
     private Date fecha_nac;
 
-    public Empleado(double Sueldo, String rol, String contrato, Date fecha_nac, String id, String nombre, String direccion, String telefono, String email) {
+    public Empleado(double Sueldo, String rol, String contrato, Date fecha_nac, String id, String nombre, String direccion, String telefono, String email, String contraseña) {
         super(id, nombre, direccion, telefono, email);
         this.sueldo = Sueldo;
         this.rol = rol;
         this.contrato = contrato;
         this.fecha_nac = fecha_nac;
+        this.contraseña= contraseña;
     }
 
     public Empleado() {
@@ -28,6 +29,7 @@ public class Empleado extends Persona{
         this.rol = "";
         this.contrato = "";
         this.fecha_nac = Date.from(Instant.MIN);
+        this.contraseña="";
     }
 
     public double getSueldo() {
@@ -61,18 +63,17 @@ public class Empleado extends Persona{
     public void setFecha_nac(Date fecha_nac) {
         this.fecha_nac = fecha_nac;
     }
+
+    public String getContraseña() {
+        return contraseña;
+    }
+
+    public void setContraseña(String contraseña) {
+        this.contraseña = contraseña;
+    }
     
     
-    public String generarConsultaEmpleado(int idEmpleado) {
-    // Generar la consulta SQL para obtener los datos del empleado
-    String consultaSQL = "SELECT e.id, e.nombre, e.direccion, e.telefono, e.email, e.sueldo, r.rol, c.contrato, e.fecha_nac "
-                       + "FROM empleado e "
-                       + "INNER JOIN rol r ON e.rol_id = r.id "
-                       + "INNER JOIN contrato c ON e.contrato_id = c.id "
-                       + "WHERE e.id = ?"; // Aquí el "?" es el parámetro que se usará para el id del empleado
-    
-    return consultaSQL;
-}
+
 
     @Override
     public String toString() {
