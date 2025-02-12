@@ -15,6 +15,9 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import Modelo.Devoluciones;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import Modelo.ConexionAzureSQL;
 import java.io.IOException;
 import java.sql.*;
@@ -31,7 +34,7 @@ public class ControlDevolucion {
     @FXML private Button btnCreateReport;
     @FXML private Pane panelDetails;
 
-    private Connection conexion;
+    public Connection conexion;
 
     public void initialize() {
         ocultarElementos();
@@ -126,7 +129,9 @@ public class ControlDevolucion {
     }
 
     private void establecerConexion() {
-        conexion = ConexionAzureSQL.conectar();
+        
+        ConexionAzureSQL c = new ConexionAzureSQL();
+        conexion= c.conectarRoot();
         if (conexion == null) {
             mostrarAlerta("Error", "No se pudo conectar a la base de datos.");
         }

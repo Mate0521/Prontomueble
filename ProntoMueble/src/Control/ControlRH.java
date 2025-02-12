@@ -91,7 +91,7 @@ public class ControlRH {
     public void actualizarTablaEmpleados() {
         ObservableList<Empleado> listaEmpleados = FXCollections.observableArrayList();
         
-        try (Connection connection = conexionAzureSQL.conectar();
+        try (Connection connection = conexionAzureSQL.conectarRoot();
              PreparedStatement statement = connection.prepareStatement("SELECT id_empleado, nombre, email, telefono, sueldo, rol, tipo_contrato, fecha_nac FROM V_Empleados")) {
             ResultSet resultSet = statement.executeQuery();
             
@@ -100,12 +100,14 @@ public class ControlRH {
                         resultSet.getDouble("sueldo"),
                         resultSet.getString("rol"),
                         resultSet.getString("tipo_contrato"),
-                        resultSet.getDate("fecha_nac").toLocalDate(),
+                        resultSet.getDate("fecha_nac"),
                         resultSet.getString("id_empleado"),
                         resultSet.getString("nombre"),
                         "",  // Dirección no está en la consulta
                         resultSet.getString("telefono"),
-                        resultSet.getString("email")
+                        resultSet.getString("email"),
+                        ""
+                           
                 );
                 listaEmpleados.add(empleado);
             }
@@ -116,7 +118,7 @@ public class ControlRH {
     }
 
     private void llenarComboBoxes() {
-        try (Connection connection = conexionAzureSQL.conectar();
+        try (Connection connection = conexionAzureSQL.conectarRoot();
              PreparedStatement rolStatement = connection.prepareStatement("SELECT nombre FROM Rol");
              PreparedStatement contratoStatement = connection.prepareStatement("SELECT nombre FROM Tipo_Contrato")) {
             ResultSet rolResultSet = rolStatement.executeQuery();
@@ -133,7 +135,7 @@ public class ControlRH {
     }
 
     private int obtenerIdRol(String nombreRol) {
-        try (Connection connection = conexionAzureSQL.conectar();
+        try (Connection connection = conexionAzureSQL.conectarRoot();
              PreparedStatement statement = connection.prepareStatement("SELECT id_rol FROM Rol WHERE nombre = ?")) {
             statement.setString(1, nombreRol);
             ResultSet resultSet = statement.executeQuery();
@@ -147,7 +149,7 @@ public class ControlRH {
     }
 
     private int obtenerIdTipoContrato(String nombreTipoContrato) {
-        try (Connection connection = conexionAzureSQL.conectar();
+        try (Connection connection = conexionAzureSQL.conectarRoot();
              PreparedStatement statement = connection.prepareStatement("SELECT id_tipoContrato FROM Tipo_Contrato WHERE nombre = ?")) {
             statement.setString(1, nombreTipoContrato);
             ResultSet resultSet = statement.executeQuery();

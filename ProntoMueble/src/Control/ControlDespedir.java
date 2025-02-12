@@ -47,7 +47,7 @@ public class ControlDespedir {
     }
 
     private void cargarDatosEmpleado(String idEmpleado) {
-        try (Connection connection = conexionAzureSQL.conectar();
+        try (Connection connection = conexionAzureSQL.conectarRoot();
              PreparedStatement statement = connection.prepareStatement("SELECT * FROM V_Empleados WHERE id_empleado = ?")) {
             statement.setString(1, idEmpleado);
             ResultSet resultSet = statement.executeQuery();
@@ -78,7 +78,7 @@ public class ControlDespedir {
         confirmacion.setContentText("Esta acción actualizará la fecha de terminación.");
 
         if (confirmacion.showAndWait().orElse(ButtonType.CANCEL) == ButtonType.OK) {
-            try (Connection connection = conexionAzureSQL.conectar();
+            try (Connection connection = conexionAzureSQL.conectarRoot();
                  PreparedStatement statement = connection.prepareStatement(
                          "UPDATE Empleado SET fecha_terminacion = ? WHERE id_empleado = ?")) {
                 statement.setDate(1, java.sql.Date.valueOf(LocalDate.now()));

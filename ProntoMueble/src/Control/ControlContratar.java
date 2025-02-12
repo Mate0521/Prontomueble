@@ -32,7 +32,7 @@ public class ControlContratar {
     
     @FXML
     public void contratarEmpleado() {
-        try (Connection connection = conexionAzureSQL.conectar();
+        try (Connection connection = conexionAzureSQL.conectarRoot();
              PreparedStatement statement = connection.prepareStatement("INSERT INTO Empleado (id_empleado, nombre, direccion, telefono, email, sueldo, rol, contrato, fecha_nac) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)")
         ) {
             statement.setString(1, idField.getText());
