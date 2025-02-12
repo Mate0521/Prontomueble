@@ -5,6 +5,7 @@ package Modelo;
  */
 public class Mueble {
     private String nombre, dimenciones, color, material, id ;
+    private int catntidad;
 
     public Mueble(String nombre, String dimenciones, String color, String material, String id) {
         this.nombre = nombre;
@@ -60,6 +61,9 @@ public class Mueble {
 
     public void setId(String id) {
         this.id = id;
+    }
+    public String toStrinDimenciones(double alto, double largo, double ancho){
+        return this.dimenciones="h"+alto+"l"+largo+"w"+ancho;
     }
     
     @Override
