@@ -18,7 +18,7 @@ import java.sql.ResultSet;
  * @author ASUS
  */
 public class ContolStart {
-    @FXML private TextField idField, nombreField, direccionField, rolField, telefonoField, emailField, fechaNacField, contratoField, sueldoField;
+    @FXML private TextField TxtId, TxtNombre, TxtDireccion, TxtRol, TxtTelefono, TxtEmail, TxtEdad, TxtContrato, TxtSueldo;
     
     private ConexionAzureSQL conexionAzureSQL;
     private String idLogueado;
@@ -36,15 +36,15 @@ public class ContolStart {
             statement.setString(1, idEmpleado);
             ResultSet resultSet = statement.executeQuery();
             
-            idField.setText(resultSet.getString("id_empleado"));
-            nombreField.setText(resultSet.getString("nombre"));
-            direccionField.setText(resultSet.getString("direccion"));
-            rolField.setText(resultSet.getString("rol"));
-            telefonoField.setText(resultSet.getString("telefono"));
-            emailField.setText(resultSet.getString("email"));
-            fechaNacField.setText(resultSet.getString("edad"));
-            contratoField.setText(resultSet.getString("contrato"));
-            sueldoField.setText(resultSet.getString("sueldo"));
+            TxtId.setText(resultSet.getString("id_empleado"));
+            TxtNombre.setText(resultSet.getString("nombre"));
+            TxtDireccion.setText(resultSet.getString("direccion"));
+            TxtRol.setText(resultSet.getString("rol"));
+            TxtTelefono.setText(resultSet.getString("telefono"));
+            TxtEmail.setText(resultSet.getString("email"));
+            TxtEdad.setText(resultSet.getString("edad"));
+            TxtContrato.setText(resultSet.getString("contrato"));
+            TxtSueldo.setText(resultSet.getString("sueldo"));
 
         }catch (SQLException e){
             e.printStackTrace();
