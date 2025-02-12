@@ -5,12 +5,18 @@
 package Controlador;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import Modelo.Devoluciones;
 import Modelo.ConexionAzureSQL;
+import java.io.IOException;
 import java.sql.*;
 
 public class ControlDevolucion {
@@ -125,7 +131,23 @@ public class ControlDevolucion {
             mostrarAlerta("Error", "No se pudo conectar a la base de datos.");
         }
     }
+
+    @FXML
+    private void mostrarVista2() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vista/Archivo.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setTitle("Archivo");
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            mostrarAlerta("Error", "No se pudo cargar la vista Achivo: " + e.getMessage());
+        }
+    }
 }
+
 
 
 
