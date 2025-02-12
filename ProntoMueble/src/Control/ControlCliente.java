@@ -20,16 +20,13 @@ public class ControlCliente {
     @FXML private TableColumn<Cliente, Integer> colCompras;
     @FXML private TextField txtBuscarId, txtNombre, txtTelefono, txtEmail, txtDireccion;
     @FXML private Button btnBuscar, btnActualizar, btnNuevoCliente;
-
     private Connection conexion;
     private ObservableList<Cliente> listaClientes = FXCollections.observableArrayList();
-
     public void initialize() {
         conectarDB();
         configurarTabla();
         cargarDatosTabla();
     }
-
     private void conectarDB() {
         try {
             conexion = DriverManager.getConnection("jdbc:sqlserver://tu-servidor.database.windows.net;database=TuBase;user=Usuario;password=Clave;");
@@ -45,14 +42,12 @@ public class ControlCliente {
     }
 
     private void cargarDatosTabla() {
-    tablaClientes.getItems().clear(); // Limpia los datos actuales de la tabla
-    tablaClientes.getColumns().clear(); // Limpia las columnas actuales de la tabla
+    tablaClientes.getItems().clear();
+    tablaClientes.getColumns().clear();
     
     try {
         Statement stmt = conexion.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT * FROM V_Contador_Comp_Clientes ORDER BY total_compras DESC");
-
-        // Configurar dinámicamente las columnas de la tabla
         for (int i = 0; i < rs.getMetaData().getColumnCount(); i++) {
             final int colIndex = i;
             TableColumn<ObservableList<String>, String> col = new TableColumn<>(rs.getMetaData().getColumnName(i + 1));
@@ -60,8 +55,6 @@ public class ControlCliente {
             tablaClientes.getColumns().add(col);
             
         }
-
-        // Cargar los datos en la tabla
         ObservableList<ObservableList<String>> data = FXCollections.observableArrayList();
         while (rs.next()) {
             ObservableList<String> row = FXCollections.observableArrayList();
@@ -70,13 +63,11 @@ public class ControlCliente {
             }
             data.add(row);
         }
-        tablaClientes.setItems(data); // Establece los datos en la tabla
+        tablaClientes.setItems(data);
     } catch (SQLException e) {
         mostrarAlerta(Alert.AlertType.ERROR, "Error", "No se pudieron cargar los datos: " + e.getMessage());
     }
 }
-
-
     @FXML
     private void buscarCliente() {
         try {
