@@ -5,6 +5,7 @@
 package Main;
 
 import Control.LongInControl;
+import static javafx.application.Application.launch;
 
 /**
  *
@@ -17,7 +18,7 @@ public class NewMain {
      */
     public static void main(String[] args) {
         LongInControl c= new LongInControl();
-        c.initialize();
+       launch(args); // Inicia la aplicación JavaFX
     }
     
 }

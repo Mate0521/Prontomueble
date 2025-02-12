@@ -30,6 +30,11 @@ public class Usado extends Mueble{
     public String toString() {
         return super.toString()+ "\nId_devolucion=" + id_devolucion ;
     }
+
+    @Override
+    public String toStrinDimenciones(double alto, double largo, double ancho) {
+         return "h"+alto+"l"+largo+"w"+ancho; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
     
 }

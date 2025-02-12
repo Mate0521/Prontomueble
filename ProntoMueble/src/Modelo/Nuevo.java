@@ -29,6 +29,11 @@ public class Nuevo extends Mueble{
     public String toString() {
         return super.toString()+"\nGarantia=" + garantia ;
     }
+
+    @Override
+    public String toStrinDimenciones(double alto, double largo, double ancho) {
+        return "h"+alto+"l"+largo+"w"+ancho ;
+    }
     
 
 

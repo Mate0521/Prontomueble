@@ -3,7 +3,7 @@ package Modelo;
 /**
  * @author Mateo
  */
-public class Mueble {
+public abstract class Mueble {
     private String nombre, dimenciones, color, material, id ;
     private int catntidad;
 
@@ -64,9 +64,7 @@ public class Mueble {
     public void setId(String id) {
         this.id = id;
     }
-    public String toStrinDimenciones(double alto, double largo, double ancho){
-        return this.dimenciones="h"+alto+"l"+largo+"w"+ancho;
-    }
+    public abstract String toStrinDimenciones(double alto, double largo, double ancho);
 
     public int getCatntidad() {
         return catntidad;
