@@ -1,6 +1,8 @@
 package Modelo;
 
+import java.time.Instant;
 import java.time.LocalDate;
+import java.util.Date;
 
 /**
  *
@@ -10,9 +12,9 @@ public class Empleado extends Persona{
 
     private double sueldo;
     private String rol, contrato;
-    private LocalDate fecha_nac;
+    private Date fecha_nac;
 
-    public Empleado(double Sueldo, String rol, String contrato, LocalDate fecha_nac, String id, String nombre, String direccion, String telefono, String email) {
+    public Empleado(double Sueldo, String rol, String contrato, Date fecha_nac, String id, String nombre, String direccion, String telefono, String email) {
         super(id, nombre, direccion, telefono, email);
         this.sueldo = Sueldo;
         this.rol = rol;
@@ -25,7 +27,7 @@ public class Empleado extends Persona{
         this.sueldo = 0.0;
         this.rol = "";
         this.contrato = "";
-        this.fecha_nac = LocalDate.now();
+        this.fecha_nac = Date.from(Instant.MIN);
     }
 
     public double getSueldo() {
@@ -52,13 +54,25 @@ public class Empleado extends Persona{
         this.contrato = contrato;
     }
 
-    public LocalDate getFecha_nac() {
+    public Date getFecha_nac() {
         return fecha_nac;
     }
 
-    public void setFecha_nac(LocalDate fecha_nac) {
+    public void setFecha_nac(Date fecha_nac) {
         this.fecha_nac = fecha_nac;
     }
+    
+    
+    public String generarConsultaEmpleado(int idEmpleado) {
+    // Generar la consulta SQL para obtener los datos del empleado
+    String consultaSQL = "SELECT e.id, e.nombre, e.direccion, e.telefono, e.email, e.sueldo, r.rol, c.contrato, e.fecha_nac "
+                       + "FROM empleado e "
+                       + "INNER JOIN rol r ON e.rol_id = r.id "
+                       + "INNER JOIN contrato c ON e.contrato_id = c.id "
+                       + "WHERE e.id = ?"; // Aquí el "?" es el parámetro que se usará para el id del empleado
+    
+    return consultaSQL;
+}
 
     @Override
     public String toString() {

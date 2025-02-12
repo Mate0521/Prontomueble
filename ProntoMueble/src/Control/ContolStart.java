@@ -15,7 +15,7 @@ import java.sql.ResultSet;
 
 /**
  *
- * @author ASUS
+ * @author Mateo
  */
 public class ContolStart {
     @FXML private TextField idField, nombreField, direccionField, rolField, telefonoField, emailField, fechaNacField, contratoField, sueldoField;
@@ -24,7 +24,7 @@ public class ContolStart {
     private String idLogueado;
     public ContolStart() {
         conexionAzureSQL = new ConexionAzureSQL();
-    }
+}
     
     public void setIdEmpleadoLogueado(String idEmpleado){
         this.idLogueado = idEmpleado;

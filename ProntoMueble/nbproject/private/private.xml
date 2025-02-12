@@ -3,16 +3,34 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< Updated upstream
-            <file>file:/C:/Users/ASUS/3D%20Objects/trabajos%20vs/Prontomueble/Prontomueble/ProntoMueble/src/Control/LongInControl.java</file>
             <file>file:/C:/Users/ASUS/3D%20Objects/trabajos%20vs/Prontomueble/Prontomueble/ProntoMueble/src/Modelo/ConexionAzureSQL.java</file>
+            <file>file:/C:/Users/ASUS/3D%20Objects/trabajos%20vs/Prontomueble/Prontomueble/ProntoMueble/src/Vista/Sale.fxml</file>
+            <file>file:/C:/Users/ASUS/3D%20Objects/trabajos%20vs/Prontomueble/Prontomueble/ProntoMueble/src/Control/PrincipalControl.java</file>
+            <file>file:/C:/Users/ASUS/3D%20Objects/trabajos%20vs/Prontomueble/Prontomueble/ProntoMueble/src/Vista/InventarioExtendDel.fxml</file>
+            <file>file:/C:/Users/ASUS/3D%20Objects/trabajos%20vs/Prontomueble/Prontomueble/ProntoMueble/src/Modelo/Empleado.java</file>
             <file>file:/C:/Users/ASUS/3D%20Objects/trabajos%20vs/Prontomueble/Prontomueble/ProntoMueble/src/Control/ProntoMueble.java</file>
-=======
-            <file>file:/C:/Users/naran/Documents/PROYECTOS%20MULTINIVEL/bases/Nueva%20carpeta/Prontomueble/ProntoMueble/src/Modelo/Persona.java</file>
-            <file>file:/C:/Users/naran/Documents/PROYECTOS%20MULTINIVEL/bases/Nueva%20carpeta/Prontomueble/ProntoMueble/src/Modelo/Cliente.java</file>
-            <file>file:/C:/Users/naran/Documents/PROYECTOS%20MULTINIVEL/bases/Nueva%20carpeta/Prontomueble/ProntoMueble/src/Vista/RHExtendDel.fxml</file>
-            <file>file:/C:/Users/naran/Documents/PROYECTOS%20MULTINIVEL/bases/Nueva%20carpeta/Prontomueble/ProntoMueble/src/Control/ProntoMueble.java</file>
->>>>>>> Stashed changes
+            <file>file:/C:/Users/ASUS/3D%20Objects/trabajos%20vs/Prontomueble/Prontomueble/ProntoMueble/src/Vista/PayrollPayment.fxml</file>
+            <file>file:/C:/Users/ASUS/3D%20Objects/trabajos%20vs/Prontomueble/Prontomueble/ProntoMueble/src/Control/LongInControl.java</file>
+            <file>file:/C:/Users/ASUS/3D%20Objects/trabajos%20vs/Prontomueble/Prontomueble/ProntoMueble/src/Vista/Customers.fxml</file>
+            <file>file:/C:/Users/ASUS/3D%20Objects/trabajos%20vs/Prontomueble/Prontomueble/ProntoMueble/src/Vista/RHExtendDel.fxml</file>
+            <file>file:/C:/Users/ASUS/3D%20Objects/trabajos%20vs/Prontomueble/Prontomueble/ProntoMueble/src/Vista/Shopping.fxml</file>
+            <file>file:/C:/Users/ASUS/3D%20Objects/trabajos%20vs/Prontomueble/Prontomueble/ProntoMueble/src/Vista/RHExtendAdd.fxml</file>
+            <file>file:/C:/Users/ASUS/3D%20Objects/trabajos%20vs/Prontomueble/Prontomueble/ProntoMueble/src/Vista/HumanResources.fxml</file>
+            <file>file:/C:/Users/ASUS/3D%20Objects/trabajos%20vs/Prontomueble/Prontomueble/ProntoMueble/src/Vista/CustomerAdd.fxml</file>
+            <file>file:/C:/Users/ASUS/3D%20Objects/trabajos%20vs/Prontomueble/Prontomueble/ProntoMueble/src/Vista/shopping.css</file>
+            <file>file:/C:/Users/ASUS/3D%20Objects/trabajos%20vs/Prontomueble/Prontomueble/ProntoMueble/src/Vista/Start.fxml</file>
+            <file>file:/C:/Users/ASUS/3D%20Objects/trabajos%20vs/Prontomueble/Prontomueble/ProntoMueble/src/Vista/Statistics.fxml</file>
+            <file>file:/C:/Users/ASUS/3D%20Objects/trabajos%20vs/Prontomueble/Prontomueble/ProntoMueble/src/Vista/Pagina_presentacion.fxml</file>
+            <file>file:/C:/Users/ASUS/3D%20Objects/trabajos%20vs/Prontomueble/Prontomueble/ProntoMueble/src/Control/ContolStart.java</file>
+            <file>file:/C:/Users/ASUS/3D%20Objects/trabajos%20vs/Prontomueble/Prontomueble/ProntoMueble/src/Control/ControlCliente.java</file>
+            <file>file:/C:/Users/ASUS/3D%20Objects/trabajos%20vs/Prontomueble/Prontomueble/ProntoMueble/src/Vista/InventarioExtendAdd.fxml</file>
+            <file>file:/C:/Users/ASUS/3D%20Objects/trabajos%20vs/Prontomueble/Prontomueble/ProntoMueble/src/Vista/customeradd.css</file>
+            <file>file:/C:/Users/ASUS/3D%20Objects/trabajos%20vs/Prontomueble/Prontomueble/ProntoMueble/src/Vista/customers.css</file>
+            <file>file:/C:/Users/ASUS/3D%20Objects/trabajos%20vs/Prontomueble/Prontomueble/ProntoMueble/src/Vista/Refund.fxml</file>
+            <file>file:/C:/Users/ASUS/3D%20Objects/trabajos%20vs/Prontomueble/Prontomueble/ProntoMueble/src/Vista/payrollpayment.css</file>
+            <file>file:/C:/Users/ASUS/3D%20Objects/trabajos%20vs/Prontomueble/Prontomueble/ProntoMueble/src/Vista/StartI.fxml</file>
+            <file>file:/C:/Users/ASUS/3D%20Objects/trabajos%20vs/Prontomueble/Prontomueble/ProntoMueble/src/Vista/Principal.fxml</file>
+            <file>file:/C:/Users/ASUS/3D%20Objects/trabajos%20vs/Prontomueble/Prontomueble/ProntoMueble/src/Vista/LongIn.fxml</file>
         </group>
     </open-files>
 </project-private>

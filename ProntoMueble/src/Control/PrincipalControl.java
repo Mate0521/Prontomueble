@@ -4,6 +4,7 @@
  */
 package Control;
 
+import Modelo.Empleado;
 import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,11 +17,11 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author ASUS
+ * @author Mateo
  */
 class PrincipalControl {
 
-    private String usuario;
+    private Empleado usuario;
     @FXML private Menu P_Start, P_Sale, P_Inventory, P_HumanResources, P_Refund, P_Statistics, P_Boss, P_Help;
     @FXML private TabPane P_tabP;
     @FXML private Tab PL_Sales,Pl_Inventory,PL_rh, PL_Refund, PL_statistics;
@@ -54,7 +55,6 @@ class PrincipalControl {
             configurarTabs(papel);
 
         } catch (IOException e) {
-            e.printStackTrace();
             System.out.println("Error al abrir la ventana: " + titulo);
         }
     }
@@ -62,44 +62,59 @@ class PrincipalControl {
     private void configurarTabs(int papel) {
         
         switch (papel) {
-            case 1:
-                P_tabP.setDisable(false);//no habilitado el tabPane
-                break;
-            case 2://solo havilitado sales 
+            case 1 -> {
+                //no habilitado el tabPane
+                P_tabP.setDisable(false);
+            }
+            case 2 -> {
+                //solo havilitado sales 
                 PL_Refund.setDisable(false);
                 PL_rh.setDisable(false);
                 PL_statistics.setDisable(false);
                 Pl_Inventory.setDisable(false);
-                break;
-            case 3://solo habilitado inventory
+            }
+            case 3 -> {
+                //solo habilitado inventory
                 PL_Refund.setDisable(false);
                 PL_Sales.setDisable(false);
                 PL_rh.setDisable(false);
                 PL_statistics.setDisable(false);
-                break;
-            case 4:// solo habilitado RRHH
+            }
+            case 4 -> {
+                // solo habilitado RRHH
                 PL_Refund.setDisable(false);
                 PL_Sales.setDisable(false);
                 PL_statistics.setDisable(false);
                 Pl_Inventory.setDisable(false);
-                break;
-            case 5 : //solo habilitado Refund
+            }
+            case 5 -> {
+                //solo habilitado Refund
                 PL_Sales.setDisable(false);
                 PL_rh.setDisable(false);
                 PL_statistics.setDisable(false);
                 Pl_Inventory.setDisable(false);
-                break;
-            case 6: //solohabilitado statistics
+            }
+            case 6 -> {
+                //solohabilitado statistics
                 PL_Refund.setDisable(false);
                 PL_Sales.setDisable(false);
                 PL_rh.setDisable(false);
                 Pl_Inventory.setDisable(false);
-                break;
-            default:
-                throw new AssertionError();
+            }
+            default -> throw new AssertionError();
         }
 
     }
+
+    public Empleado getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Empleado usuario) {
+        this.usuario = usuario;
+    }
+    
+    
 }
             
    
