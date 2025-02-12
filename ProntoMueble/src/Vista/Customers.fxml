@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.ProntoMueble">
+    <stylesheets>
+        <URL value="@customers.css" />
+    </stylesheets>
+   <children>
+      <VBox prefHeight="574.0" prefWidth="684.0">
+         <children>
+            <Pane prefHeight="40.0" prefWidth="200.0" />
+            <ToolBar prefHeight="40.0" prefWidth="200.0">
+               <items>
+                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="664.0" text="New Customer " />
+               </items>
+            </ToolBar>
+            <Pane prefHeight="142.0" prefWidth="684.0">
+               <children>
+                  <TableView layoutX="-7.0" prefHeight="142.0" prefWidth="692.0">
+                    <columns>
+                      <TableColumn prefWidth="203.99999475479126" text="ID customer" />
+                      <TableColumn minWidth="0.0" prefWidth="263.3333282470703" text="Nombre " />
+                        <TableColumn prefWidth="219.99996948242188" text="Total compras " />
+                    </columns>
+                  </TableView>
+               </children>
+            </Pane>
+            <Pane prefHeight="99.0" prefWidth="684.0">
+               <children>
+                  <Label layoutX="135.0" layoutY="50.0" text="Modificar" />
+                  <ToolBar layoutX="359.0" layoutY="38.0" prefHeight="41.0" prefWidth="263.0">
+                     <items>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
+                           <image>
+                              <Image url="@../folder/Search.jpg" />
+                           </image>
+                        </ImageView>
+                        <TextField prefHeight="25.0" prefWidth="210.0" promptText="ID" />
+                     </items>
+                  </ToolBar>
+               </children>
+            </Pane>
+            <Pane prefHeight="240.0" prefWidth="684.0">
+               <children>
+                  <Pane layoutX="98.0" prefHeight="237.0" prefWidth="489.0">
+                     <children>
+                        <TextField disable="true" layoutX="14.0" layoutY="30.0" prefHeight="25.0" prefWidth="197.0" promptText="ID:BD" />
+                        <TextField layoutX="64.0" layoutY="78.0" />
+                        <Label layoutX="14.0" layoutY="82.0" text="Nombre: " />
+                        <TextField layoutX="300.0" layoutY="78.0" prefHeight="25.0" prefWidth="163.0" />
+                        <Label layoutX="264.0" layoutY="82.0" text="Email: " />
+                        <TextField layoutX="326.0" layoutY="120.0" prefHeight="9.0" prefWidth="137.0" />
+                        <Label layoutX="274.0" layoutY="124.0" text="Direccion:" />
+                        <TextField layoutX="65.0" layoutY="120.0" />
+                        <Label layoutX="15.0" layoutY="124.0" text="Telefono: " />
+                        <TextField layoutX="55.0" layoutY="162.0" prefHeight="25.0" prefWidth="157.0" />
+                        <Label layoutX="13.0" layoutY="166.0" text="Estado: " />
+                        <Button layoutX="368.0" layoutY="165.0" mnemonicParsing="false" text="OK" />
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
