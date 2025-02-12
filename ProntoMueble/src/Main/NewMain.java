@@ -17,6 +17,7 @@ public class NewMain {
      */
     public static void main(String[] args) {
         LongInControl c= new LongInControl();
+        c.initialize();
     }
     
 }
