@@ -67,7 +67,7 @@ public class LongInControl {
             PrincipalControl principalController = loader.getController();
 
             principalController.setUsuario(usuario); // Enviar el usuario autenticado
-
+            
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.setTitle("Main Window");
