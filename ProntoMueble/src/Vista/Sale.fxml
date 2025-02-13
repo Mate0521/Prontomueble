@@ -13,54 +13,39 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="566.0" prefWidth="686.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="566.0" prefWidth="686.0" stylesheets="@estiloVentas.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <VBox layoutX="-2.0" layoutY="-1.0" prefHeight="571.0" prefWidth="687.0">
          <children>
             <Pane prefHeight="134.0" prefWidth="684.0" styleClass="P2">
                <children>
-                  <ToolBar layoutX="14.0" layoutY="32.0" prefHeight="58.0" prefWidth="316.0" styleClass="toolbar">
+                  <ToolBar layoutX="14.0" layoutY="32.0" prefHeight="40.0" prefWidth="283.0" styleClass="toolbar">
                      <items>
-                        <TextField id="txtIdSale" prefHeight="29.0" prefWidth="235.0" promptText="Id" styleClass="textField" />
-                        <StackPane prefHeight="30.0" prefWidth="30.0">
-                           <children>
-                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
-                                 <image>
-                                    <Image url="@../folder/Search.jpg" />
-                                 </image>
-                              </ImageView>
-                              <Button id="btn_search" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" />
-                           </children>
-                        </StackPane>
-                     </items>
-                  </ToolBar>
-                  <StackPane layoutX="539.0" layoutY="26.0" prefHeight="81.0" prefWidth="81.0">
-                     <children>
-                        <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="29.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
                            <image>
-                              <Image url="@../folder/ShoppingCart.jpg" />
+                              <Image url="@../folder/Search.jpg" />
                            </image>
                         </ImageView>
-                        <Button id="btn_shopCart" mnemonicParsing="false" prefHeight="92.0" prefWidth="85.0" />
-                     </children>
-                  </StackPane>
+                        <TextField id="TxtId" prefHeight="29.0" prefWidth="235.0" promptText="Id" styleClass="textField" />
+                     </items>
+                  </ToolBar>
                </children>
             </Pane>
             <AnchorPane prefHeight="433.0" prefWidth="679.0">
                <children>
-                  <ScrollPane layoutY="2.0" prefHeight="433.0" prefWidth="687.0">
+                  <ScrollPane prefHeight="433.0" prefWidth="687.0">
                      <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="665.0" prefWidth="670.0" styleClass="P4">
                            <children>
-                              <Pane id="sale_1" layoutX="71.0" layoutY="5.0" prefHeight="280.0" prefWidth="200.0">
+                              <Pane id="PanelVentas_1" layoutX="71.0" layoutY="5.0" prefHeight="280.0" prefWidth="200.0">
                                  <children>
-                                    <ImageView id="img_sale1" fitHeight="112.0" fitWidth="188.0" layoutX="6.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" styleClass="imageProduct" />
+                                    <ImageView fitHeight="112.0" fitWidth="188.0" layoutX="6.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" styleClass="imageProduct" />
                                     <Separator layoutX="20.0" layoutY="123.0" prefHeight="34.0" prefWidth="159.0" />
-                                    <TextField id="id_sale1" disable="true" layoutX="10.0" layoutY="145.0" prefHeight="25.0" prefWidth="137.0" promptText="ID:BD" />
-                                    <TextField id="name_sale1" disable="true" layoutX="10.0" layoutY="173.0" prefHeight="25.0" prefWidth="85.0" promptText="NAME:BD" />
-                                    <TextField id="dim_sale1" disable="true" layoutX="10.0" layoutY="198.0" prefHeight="25.0" prefWidth="85.0" promptText="DIM:BD" />
-                                    <TextField id="color_sale1" disable="true" layoutX="10.0" layoutY="223.0" prefHeight="25.0" prefWidth="85.0" promptText="COLOR:BD" />
-                                    <TextField id="mat_sale1" disable="true" layoutX="108.0" layoutY="198.0" prefHeight="25.0" prefWidth="85.0" promptText="MAT:BD" />
+                                    <TextField disable="true" layoutX="10.0" layoutY="145.0" prefHeight="25.0" prefWidth="137.0" promptText="ID:BD" />
+                                    <TextField disable="true" layoutX="10.0" layoutY="173.0" prefHeight="25.0" prefWidth="85.0" promptText="NAME:BD" />
+                                    <TextField disable="true" layoutX="10.0" layoutY="198.0" prefHeight="25.0" prefWidth="85.0" promptText="DIM:BD" />
+                                    <TextField disable="true" layoutX="10.0" layoutY="223.0" prefHeight="25.0" prefWidth="85.0" promptText="COLOR:BD" />
+                                    <TextField disable="true" layoutX="108.0" layoutY="198.0" prefHeight="25.0" prefWidth="85.0" promptText="MAT:BD" />
                                     <StackPane layoutX="122.0" layoutY="223.0" prefHeight="50.0" prefWidth="50.0">
                                        <children>
                                           <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
@@ -68,25 +53,25 @@
                                                 <Image url="@../folder/ShoppingCart.jpg" />
                                              </image>
                                           </ImageView>
-                                          <Button id="btn_sale1" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" />
+                                          <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" />
                                        </children>
                                     </StackPane>
-                                    <TextField id="price_sale1" disable="true" layoutX="108.0" layoutY="173.0" prefHeight="25.0" prefWidth="85.0" promptText="PRICE:BD" />
+                                    <TextField disable="true" layoutX="108.0" layoutY="173.0" prefHeight="25.0" prefWidth="85.0" promptText="PRICE:BD" />
                                  </children>
                                  <styleClass>
                                     <String fx:value="panelWidgets" />
                                     <String fx:value="panel-borde-azul" />
                                  </styleClass>
                               </Pane>
-                              <Pane id="sale_2" layoutX="392.0" layoutY="5.0" prefHeight="280.0" prefWidth="200.0">
+                              <Pane id="PanelVentas_2" layoutX="392.0" layoutY="5.0" prefHeight="280.0" prefWidth="200.0">
                                  <children>
-                                    <ImageView id="img_sale2" fitHeight="112.0" fitWidth="188.0" layoutX="6.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" styleClass="imageProduct" />
+                                    <ImageView fitHeight="112.0" fitWidth="188.0" layoutX="6.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" styleClass="imageProduct" />
                                     <Separator layoutX="20.0" layoutY="123.0" prefHeight="34.0" prefWidth="159.0" />
-                                    <TextField id="id_sale2" disable="true" layoutX="10.0" layoutY="145.0" prefHeight="25.0" prefWidth="137.0" promptText="ID:BD" />
-                                    <TextField id="name_sale2" disable="true" layoutX="10.0" layoutY="173.0" prefHeight="25.0" prefWidth="85.0" promptText="NAME:BD" />
-                                    <TextField id="dim_sale2" disable="true" layoutX="10.0" layoutY="198.0" prefHeight="25.0" prefWidth="85.0" promptText="DIM:BD" />
-                                    <TextField id="color_sale2" disable="true" layoutX="10.0" layoutY="223.0" prefHeight="25.0" prefWidth="85.0" promptText="COLOR:BD" />
-                                    <TextField id="mat_sale2" disable="true" layoutX="108.0" layoutY="198.0" prefHeight="25.0" prefWidth="85.0" promptText="MAT:BD" />
+                                    <TextField disable="true" layoutX="10.0" layoutY="145.0" prefHeight="25.0" prefWidth="137.0" promptText="ID:BD" />
+                                    <TextField disable="true" layoutX="10.0" layoutY="173.0" prefHeight="25.0" prefWidth="85.0" promptText="NAME:BD" />
+                                    <TextField disable="true" layoutX="10.0" layoutY="198.0" prefHeight="25.0" prefWidth="85.0" promptText="DIM:BD" />
+                                    <TextField disable="true" layoutX="10.0" layoutY="223.0" prefHeight="25.0" prefWidth="85.0" promptText="COLOR:BD" />
+                                    <TextField disable="true" layoutX="108.0" layoutY="198.0" prefHeight="25.0" prefWidth="85.0" promptText="MAT:BD" />
                                     <StackPane layoutX="122.0" layoutY="223.0" prefHeight="50.0" prefWidth="50.0">
                                        <children>
                                           <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
@@ -94,25 +79,25 @@
                                                 <Image url="@../folder/ShoppingCart.jpg" />
                                              </image>
                                           </ImageView>
-                                          <Button id="btn_sale2" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" />
+                                          <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" />
                                        </children>
                                     </StackPane>
-                                    <TextField id="price_sale2" disable="true" layoutX="108.0" layoutY="173.0" prefHeight="25.0" prefWidth="85.0" promptText="PRICE:BD" />
+                                    <TextField disable="true" layoutX="108.0" layoutY="173.0" prefHeight="25.0" prefWidth="85.0" promptText="PRICE:BD" />
                                  </children>
                                  <styleClass>
                                     <String fx:value="panelWidgets" />
                                     <String fx:value="panel-borde-rojo" />
                                  </styleClass>
                               </Pane>
-                              <Pane id="sale_3" disable="false" layoutX="71.0" layoutY="333.0" prefHeight="280.0" prefWidth="200.0" styleClass="panelWidgets">
+                              <Pane id="PanelVentas_3" layoutX="71.0" layoutY="333.0" prefHeight="280.0" prefWidth="200.0" styleClass="panelWidgets">
                                  <children>
-                                    <ImageView id="img_sale3" fitHeight="112.0" fitWidth="188.0" layoutX="6.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" styleClass="imageProduct" />
+                                    <ImageView fitHeight="112.0" fitWidth="188.0" layoutX="6.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" styleClass="imageProduct" />
                                     <Separator layoutX="20.0" layoutY="123.0" prefHeight="34.0" prefWidth="159.0" />
-                                    <TextField id="id_sale3" disable="true" layoutX="10.0" layoutY="145.0" prefHeight="25.0" prefWidth="137.0" promptText="ID:BD" />
-                                    <TextField id="name_sale3" disable="true" layoutX="10.0" layoutY="173.0" prefHeight="25.0" prefWidth="85.0" promptText="NAME:BD" />
-                                    <TextField id="dim_sale3" disable="true" layoutX="10.0" layoutY="198.0" prefHeight="25.0" prefWidth="85.0" promptText="DIM:BD" />
-                                    <TextField id="color_sale3" disable="true" layoutX="10.0" layoutY="223.0" prefHeight="25.0" prefWidth="85.0" promptText="COLOR:BD" />
-                                    <TextField id="mat_sale3" disable="true" layoutX="108.0" layoutY="198.0" prefHeight="25.0" prefWidth="85.0" promptText="MAT:BD" />
+                                    <TextField disable="true" layoutX="10.0" layoutY="145.0" prefHeight="25.0" prefWidth="137.0" promptText="ID:BD" />
+                                    <TextField disable="true" layoutX="10.0" layoutY="173.0" prefHeight="25.0" prefWidth="85.0" promptText="NAME:BD" />
+                                    <TextField disable="true" layoutX="10.0" layoutY="198.0" prefHeight="25.0" prefWidth="85.0" promptText="DIM:BD" />
+                                    <TextField disable="true" layoutX="10.0" layoutY="223.0" prefHeight="25.0" prefWidth="85.0" promptText="COLOR:BD" />
+                                    <TextField disable="true" layoutX="108.0" layoutY="198.0" prefHeight="25.0" prefWidth="85.0" promptText="MAT:BD" />
                                     <StackPane layoutX="122.0" layoutY="223.0" prefHeight="50.0" prefWidth="50.0">
                                        <children>
                                           <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
@@ -120,21 +105,21 @@
                                                 <Image url="@../folder/ShoppingCart.jpg" />
                                              </image>
                                           </ImageView>
-                                          <Button id="btn_sale3" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" />
+                                          <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" />
                                        </children>
                                     </StackPane>
-                                    <TextField id="price_sale3" disable="true" layoutX="108.0" layoutY="173.0" prefHeight="25.0" prefWidth="85.0" promptText="PRICE:BD" />
+                                    <TextField disable="true" layoutX="108.0" layoutY="173.0" prefHeight="25.0" prefWidth="85.0" promptText="PRICE:BD" />
                                  </children>
                               </Pane>
-                              <Pane id="sale_4" disable="false" layoutX="392.0" layoutY="333.0" prefHeight="280.0" prefWidth="200.0" styleClass="panelWidgets">
+                              <Pane id="PanelVentas_4" layoutX="392.0" layoutY="333.0" prefHeight="280.0" prefWidth="200.0" styleClass="panelWidgets">
                                  <children>
-                                    <ImageView id="img_sale4" fitHeight="112.0" fitWidth="188.0" layoutX="6.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" styleClass="imageProduct" />
+                                    <ImageView fitHeight="112.0" fitWidth="188.0" layoutX="6.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" styleClass="imageProduct" />
                                     <Separator layoutX="20.0" layoutY="123.0" prefHeight="34.0" prefWidth="159.0" />
-                                    <TextField id="id_sale4" disable="true" layoutX="10.0" layoutY="145.0" prefHeight="25.0" prefWidth="137.0" promptText="ID:BD" />
-                                    <TextField id="name_sale4" disable="true" layoutX="10.0" layoutY="173.0" prefHeight="25.0" prefWidth="85.0" promptText="NAME:BD" />
-                                    <TextField id="dim_sale4" disable="true" layoutX="10.0" layoutY="198.0" prefHeight="25.0" prefWidth="85.0" promptText="DIM:BD" />
-                                    <TextField id="color_sale4" disable="true" layoutX="10.0" layoutY="223.0" prefHeight="25.0" prefWidth="85.0" promptText="COLOR:BD" />
-                                    <TextField id="mat_sale4" disable="true" layoutX="108.0" layoutY="198.0" prefHeight="25.0" prefWidth="85.0" promptText="MAT:BD" />
+                                    <TextField disable="true" layoutX="10.0" layoutY="145.0" prefHeight="25.0" prefWidth="137.0" promptText="ID:BD" />
+                                    <TextField disable="true" layoutX="10.0" layoutY="173.0" prefHeight="25.0" prefWidth="85.0" promptText="NAME:BD" />
+                                    <TextField disable="true" layoutX="10.0" layoutY="198.0" prefHeight="25.0" prefWidth="85.0" promptText="DIM:BD" />
+                                    <TextField disable="true" layoutX="10.0" layoutY="223.0" prefHeight="25.0" prefWidth="85.0" promptText="COLOR:BD" />
+                                    <TextField disable="true" layoutX="108.0" layoutY="198.0" prefHeight="25.0" prefWidth="85.0" promptText="MAT:BD" />
                                     <StackPane layoutX="122.0" layoutY="223.0" prefHeight="50.0" prefWidth="50.0">
                                        <children>
                                           <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
@@ -142,10 +127,10 @@
                                                 <Image url="@../folder/ShoppingCart.jpg" />
                                              </image>
                                           </ImageView>
-                                          <Button id="btn_sale4" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" />
+                                          <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" />
                                        </children>
                                     </StackPane>
-                                    <TextField id="price_sale4" disable="true" layoutX="108.0" layoutY="173.0" prefHeight="25.0" prefWidth="85.0" promptText="PRICE:BD" />
+                                    <TextField disable="true" layoutX="108.0" layoutY="173.0" prefHeight="25.0" prefWidth="85.0" promptText="PRICE:BD" />
                                  </children>
                               </Pane>
                            </children>
