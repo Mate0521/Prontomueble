@@ -18,6 +18,11 @@ public class LongInControl implements ActionListener {
     private ConexionAzureSQL obAzureSQL = new ConexionAzureSQL(); // Inicializar la conexión
     login obLogin = new login(); 
 
+    public LongInControl() {
+        obLogin.getBtnlogin().addActionListener(this);
+    }
+
+    
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource().equals(obLogin.getBtnlogin())) {
@@ -26,6 +31,7 @@ public class LongInControl implements ActionListener {
                 login();
                 PrincipalControl obControl = new PrincipalControl();
                 obControl.iniciar();
+                this.obLogin.dispose();  // Cierra la ventana de login
             } catch (SQLException ex) {
                 Logger.getLogger(LongInControl.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -33,32 +39,31 @@ public class LongInControl implements ActionListener {
     }
     public void iniciar(){
         obLogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        obLogin.setSize(400, 300); // Tamaño de la ventana
+        obLogin.setSize(780, 440); // Tamaño de la ventana
         obLogin.setLocationRelativeTo(null); // Centrar la ventana
         obLogin.setVisible(true);
     }
     
     private void login() throws SQLException {
-        String idText = obLogin.getTxtusuario().getText();
-        String password = obLogin.getTxtcontraseña().getText();
 
         // Validar campos vacíos
-        if (idText.isEmpty() || password.isEmpty()) {
-            mostrarAlerta("Campos vacíos", "Por favor, ingrese su usuario y contraseña.");
+        if (obLogin.getTxtusuario().getText().trim().isEmpty() || obLogin.getTxtcontraseña().getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Por favor, ingrese su usuario y contraseña.", 
+                                          "Campos vacíos", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
         // Intentar conectar a la base de datos
-        Connection conexion = obAzureSQL.conectarEmpleado(idText, password);
+        Connection conexion = obAzureSQL.conectarEmpleado(obLogin.getTxtusuario().getText(),obLogin.getTxtcontraseña().getText());
 
         if (conexion != null) {
-            mostrarAlerta("Inicio de sesión exitoso", "Bienvenido " + idText);
+            mostrarAlerta("Inicio de sesión exitoso", "Bienvenido " + obLogin.getTxtusuario().getText());
 
             // Cerrar la ventana de login
             obLogin.dispose();
 
             // Abrir la ventana principal
-            Empleado empleado = obtenerEmpleado(idText, password);
+            Empleado empleado = obtenerEmpleado(obLogin.getTxtusuario().getText(), obLogin.getTxtcontraseña().getText());
             if (empleado != null) {
                 abrirVentanaPrincipal(empleado);
             } else {
